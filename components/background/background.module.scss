@@ -1,3 +1,5 @@
+@import '@styles/variables.scss';
+
 .grouch-gradient {
   &-1 {
     fill: url(#grouch-gradient--main-one) var(--grouch-dirty-black);
@@ -68,8 +70,22 @@
 }
 
 .hands {
-  opacity: 0.2;
   position: fixed;
-  bottom: 10%;
-  left: 15%;
+  bottom: -1em;
+  left: 55%;
+  width: 50vw;
+  opacity: 0.2;
+  z-index: 3;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @include small-up {
+    bottom: 12vh;
+    left: 50%;
+    width: 50vw;
+    z-index: 1;
+  }
 }
