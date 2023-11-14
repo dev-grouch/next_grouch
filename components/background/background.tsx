@@ -10,13 +10,15 @@ import { memo } from 'react'
 export const GrouchLandscape = () => (
   <>
     <div className={styles['landscape']}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlSpace="preserve"
-        viewBox="0 0 1065 1163"
-        className={styles['grouch-gradient-1']}>
-        <path d="M1065.3.1c-158.6 0-347.9 96.5-475 111.6C225 155.1.3 165.3.3 333.1v830h1065V.1z" />
-      </svg>
+      <Parallax speed={40} translateY={[-8, 0]} scale={[1.05, 1]}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlSpace="preserve"
+          viewBox="0 0 1065 1163"
+          className={styles['grouch-gradient-1']}>
+          <path d="M1065.3.1c-158.6 0-347.9 96.5-475 111.6C225 155.1.3 165.3.3 333.1v830h1065V.1z" />
+        </svg>
+      </Parallax>
     </div>
   </>
 )
@@ -24,7 +26,7 @@ export const GrouchLandscape = () => (
 export const GrouchShapeOne = () => (
   <>
     <div className={styles['shape-one']}>
-      <Parallax speed={2} translateX={[12, -5]} translateY={[-15, 0]} scale={[1.16, 1.01]}>
+      <Parallax speed={2} translateY={[-15, 0]} scale={[1.16, 1.01]}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlSpace="preserve"
@@ -40,7 +42,7 @@ export const GrouchShapeOne = () => (
 export const GrouchShapeTwo = () => (
   <>
     <div className={styles['shape-two']}>
-      <Parallax speed={8} translateX={[10, -5]} translateY={[-8, 0]} scale={[0.9, 1.13]}>
+      <Parallax speed={8} translateY={[-8, 0]} scale={[0.9, 1.13]}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlSpace="preserve"
@@ -55,7 +57,7 @@ export const GrouchShapeTwo = () => (
 
 export const Hands = () => (
   <div className={styles['hands']}>
-    <Parallax speed={5} translateY={[55, -5]} scale={[.8, 1.1]}>
+    <Parallax speed={40} translateY={[55, -5]} scale={[.8, 1.1]}>
       <Image src={ImgHands} alt="Hands" className={styles['hero-image']} />
     </Parallax>
   </div>

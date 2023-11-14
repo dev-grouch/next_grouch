@@ -47,7 +47,6 @@
   width: 100%;
   max-height: 1163px;
   height: 35vh;
-  overflow-y: hidden;
   object-fit: contain;
 }
 
@@ -96,7 +95,7 @@
   }
 
   @include small-up {
-    bottom: 5vh;
+    bottom: 15vh;
     left: 50%;
     width: 50vw;
     z-index: 1;
