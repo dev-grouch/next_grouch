@@ -52,21 +52,33 @@
 }
 
 .shape-one {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   height: 100%;
   z-index: 3;
+  perspective: 500px;
   object-fit: contain;
+
+  svg {
+    width: 100%;
+    height: 120vh;
+  }
 }
 
 .shape-two {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   height: 100%;
   z-index: 2;
+  perspective: 500px;
   object-fit: contain;
+
+  svg {
+    width: 100%;
+    height: 120vh;
+  }
 }
 
 .hands {
@@ -84,7 +96,7 @@
   }
 
   @include small-up {
-    bottom: 12vh;
+    bottom: 5vh;
     left: 50%;
     width: 50vw;
     z-index: 1;
