@@ -1,12 +1,13 @@
-import type { Metadata } from 'next'
-
 import cx from 'classnames'
 import { Inter } from 'next/font/google'
+import type { Metadata } from 'next'
+
 import './globals.scss'
 import Header from '@components/header/header'
 import Background from '@components/background/background'
 import Footer from '@components/footer/footer'
 import styles from './layout.module.scss'
+import Providers from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,13 +25,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cx(inter.className, styles.body)}>
-        <div className="foreground">
-          <Header />
-          {children}
-          <Footer />
-        </div>
-        <Background />
-      </body>
+          <Providers>
+            <div className="foreground">
+              <Header />
+              {children}
+              <Footer />
+            </div>
+            <Background />
+          </Providers>
+        </body>
     </html>
   )
 }

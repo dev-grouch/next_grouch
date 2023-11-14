@@ -1,3 +1,7 @@
+'use client'
+
+import { Parallax } from 'react-scroll-parallax';
+
 import Image from 'next/image'
 import styles from './background.module.scss'
 import ImgHands from '@media/hands.png'
@@ -47,7 +51,9 @@ export const GrouchShapeTwo = () => (
 
 export const Hands = () => (
   <div className={styles['hands']}>
-    <Image src={ImgHands} alt="Hands" className={styles['hero-image']} />
+    <Parallax speed={5} translateY={[65, -5]} scale={[.8, 1.1]}>
+      <Image src={ImgHands} alt="Hands" className={styles['hero-image']} />
+    </Parallax>
   </div>
 )
 
@@ -90,15 +96,17 @@ export const GrouchGradients = () => (
   </>
 )
 
-const Background = memo(() => (
-  <div className={styles['background']}>
-    <Hands />
-    <GrouchLandscape />
-    <GrouchShapeOne />
-    <GrouchShapeTwo />
-    <GrouchGradients />
-  </div>
-))
+const Background = memo(() => {
+  return (
+    <div className={styles['background']}>
+      <Hands />
+      <GrouchLandscape />
+      <GrouchShapeOne />
+      <GrouchShapeTwo />
+      <GrouchGradients />
+    </div>
+)
+})
 
 Background.displayName = 'Background'
 
