@@ -1,0 +1,103 @@
+@import '@styles/variables';
+
+$input-border-width: 4px;
+$form-gap-x: 1em;
+$form-gap-y: 2.6em;
+
+@mixin inputStyles {
+  background: $grouch-off-white;
+  color: $grouch-dirty-black;
+  border: $input-border-width solid $grouch-dirty-black;
+  border-bottom: $input-border-width solid $grouch-dark-yellow;
+  border-right: $input-border-width solid $grouch-dark-yellow;
+}
+
+.contactForm {
+  .form_wrapper {
+    margin: 2em 0 0;
+  }
+
+  .form {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-rows: auto auto auto;
+    gap: $form-gap-x $form-gap-y;
+    grid-auto-flow: row;
+    grid-template-areas:
+      'name message'
+      'email message'
+      '. submit';
+
+    .name {
+      grid-area: name;
+    }
+
+    .email {
+      grid-area: email;
+    }
+
+    .message {
+      grid-area: message;
+    }
+
+    .submit {
+      grid-area: submit;
+      justify-self: end;
+      width: fit-content;
+      height: fit-content;
+      padding: 0.8em 3em;
+      background-color: $grouch-dark-yellow;
+      color: $grouch-dirty-black;
+      font-weight: 700;
+      border: $input-border-width solid $grouch-dirty-black;
+      border-bottom: $input-border-width solid $grouch-dark-yellow;
+      border-right: $input-border-width solid $grouch-dark-yellow;
+      border-top-color: $grouch-light-yellow;
+      border-left-color: $grouch-light-yellow;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: $grouch-light-yellow;
+        color: $grouch-dirty-black;
+        cursor: pointer;
+        border-top-color: $grouch-light-yellow;
+        border-left-color: $grouch-light-yellow;
+        border-bottom-color: $grouch-dark-yellow;
+        border-right-color: $grouch-dark-yellow;
+      }
+    }
+
+    input[type='text'],
+    input[type='email'],
+    textarea {
+      @include inputStyles;
+      padding: 10px;
+      width: 100%;
+    }
+
+    textarea {
+      resize: none;
+      height: calc(100% - (2 * $form-gap-x) + (2 * $input-border-width));
+    }
+
+    .label {
+      padding-bottom: 1.3em;
+      position: relative;
+
+      .labelText {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: $grouch-dirty-black;
+      }
+    }
+
+    .errorMsg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      color: $grouch-light-red;
+      font-size: 0.8rem;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@use 'sass:color';
+@import '@styles/variables';
+
+.header {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: block;
+
+    a {
+      display: block;
+      padding: 2em $container-padding--right 1.8em $container-padding--left;
+      background: color.adjust($color: #191919, $alpha: -0.5);
+
+      @media (min-width: 768px) {
+        padding-left: $container-padding--left--xl;
+      }
+    }
+  }
+
+  ul {
+    margin: 0 2em 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+
+    li {
+      display: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0.9rem;
+
+      @media (min-width: 450px) {
+        display: inline-block;
+      }
+
+      a {
+        color: white;
+        display: inline-block;
+        padding: 0;
+        text-decoration: none;
+
+        &:hover {
+          color: var(--grouch-light-yellow);
+        }
+      }
+    }
+  }
+}

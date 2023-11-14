@@ -1,0 +1,105 @@
+@import '@styles/variables.scss';
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: $container-padding--top $container-padding--right
+    $container-padding--bottom $container-padding--left;
+
+  &__center {
+    text-align: center;
+  }
+
+  &__spacing-xl {
+    padding: 50px 40px;
+  }
+
+  &__full {
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: $container-padding--bottom;
+
+    .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__flex {
+    /* does nothing on mobile */
+  }
+
+  &__purple {
+    background: var(--grouch-light-purple);
+  }
+
+  &__blue {
+    background: var(--grouch-light-blue);
+  }
+
+  &__green {
+    background: var(--grouch-light-green);
+  }
+
+  &__red {
+    background: var(--grouch-light-red);
+  }
+
+  &__dark {
+    background: var(--grouch-dark-background);
+    color: var(--grouch-dark-text);
+  }
+
+  &__white {
+    background: white;
+    color: var(--grouch-dirty-black);
+
+    h1,
+    h2,
+    h3,
+    p {
+      color: var(--grouch-dirty-black);
+    }
+  }
+
+  h2 {
+    max-width: 80%;
+  }
+
+  p {
+    margin: 1em 0 0;
+    padding: 0;
+    width: 80%;
+    min-width: 300px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  @include small-up {
+    padding: $container-padding--top--xl $container-padding--right--xl
+      $container-padding--bottom--xl $container-padding--left--xl;
+
+    &__full {
+      padding-right: 0;
+      padding-left: 0;
+      margin-bottom: $container-padding--bottom--xl;
+    }
+
+    &__flex {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+    }
+
+    h2 {
+      max-width: 580px;
+    }
+
+    p {
+      margin: 1.15em 0 0;
+      max-width: 600px;
+    }
+  }
+}

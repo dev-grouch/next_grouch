@@ -1,0 +1,39 @@
+@mixin gradient-1 {
+  background: rgb(17, 17, 17);
+  background: linear-gradient(
+    90deg,
+    var(--grouch-dirty-black) 18%,
+    var(--grouch-dark-purple) 78%,
+    var(--grouch-dark-blue) 100%
+  );
+}
+
+@mixin gradient-2 {
+  background: rgb(17, 17, 17);
+  background: linear-gradient(
+    90deg,
+    var(--grouch-dark-purple) 0%,
+    var(--grouch-dark-red) 100%
+  );
+}
+
+@mixin phone-only {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin small-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin medium-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin large-up {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
