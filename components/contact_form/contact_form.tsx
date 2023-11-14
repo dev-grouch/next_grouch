@@ -1,24 +1,49 @@
 'use client'
-import cx from 'classnames'
 
+import cx from 'classnames'
+import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+
+import { addEntry } from '@/app/_actions'
 import styles from './contact_form.module.scss'
 import Container from '../container/container'
-import SubmitButton from '../submit-button/submit-button'
+import { FormDataSchema } from '@/lib/schema'
 
-type FormValues = {
-  name: string
-  email: string
-  message: string
-}
+type Inputs = z.infer<typeof FormDataSchema>
+
 
 const ContactForm = () => {
+  const [data, setData] = useState<Inputs>()
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm<FormValues>()
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data)
+    watch,
+    reset,
+    formState: { errors }
+  } = useForm<Inputs>({
+    resolver: zodResolver(FormDataSchema)
+  })
+
+  const processForm: SubmitHandler<Inputs> = async data => {
+    const result = await addEntry(data)
+
+    if (!result) {
+      console.log('Something went wrong')
+      return
+    }
+
+    if (result.error) {
+      // set local error state
+      console.log(result.error)
+      return
+    }
+
+    reset()
+    setData(result.data)
+  }
 
   return (
     <Container
@@ -35,29 +60,27 @@ const ContactForm = () => {
 
         <div className={styles.form_wrapper}>
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(processForm)}
             className={styles.form}
-            action="/api/contact">
+          >
             <label htmlFor="name" className={cx([styles.name, styles.label])}>
               <span className={styles.labelText}>Name</span>
               <input type="text" {...register('name', { required: true })} />
 
-              {errors.name?.type === 'required' && (
-                <p className={styles.errorMsg}>Name is required.</p>
-              )}
+              {errors.name?.message && (
+              <p className={styles.errorMsg}>{errors.name.message}</p>
+            )}
             </label>
 
             <label htmlFor="email" className={cx([styles.email, styles.label])}>
               <span className={styles.labelText}>Email</span>
               <input type="email" {...register('email', { required: true })} />
 
-              {errors.email?.type === 'required' && (
-                <p className={styles.errorMsg}>Email is required.</p>
-              )}
-              {errors.email?.type === 'pattern' && (
-                <p className={styles.errorMsg}>Email is not valid.</p>
+              {errors.email?.message && (
+                <p className={styles.errorMsg}>{errors.email.message}</p>
               )}
             </label>
+
 
             <label
               htmlFor="message"
@@ -68,13 +91,17 @@ const ContactForm = () => {
                 className={styles.message}
               />
 
-              {errors.message?.type === 'required' && (
-                <p className={styles.errorMsg}>Message is required.</p>
+              {errors.message?.message && (
+                <p className={styles.errorMsg}>{errors.message.message}</p>
               )}
             </label>
 
-            <SubmitButton extraClass={styles.submit} />
+            <button className={styles.submit}>Submit</button>
           </form>
+        </div>
+
+        <div className='flex-1 rounded-lg bg-cyan-600 p-8 text-white'>
+          <pre>{JSON.stringify(data, null, 2)}</pre>
         </div>
       </Container>
     </Container>
