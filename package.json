@@ -10,6 +10,10 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.2.0",
+    "@react-email/components": "^0.0.7",
+    "@types/node": "20.5.0",
+    "@types/react": "18.2.20",
+    "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "classnames": "^2.3.2",
     "next": "14.0.2",
@@ -17,6 +21,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.48.2",
+    "resend": "^2.0.0",
     "zod": "^3.22.1"
   },
   "devDependencies": {
@@ -25,8 +30,8 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.0.2",
+    "prettier": "^3.0.2",
     "sass": "^1.69.5",
-    "typescript": "^5",
-    "prettier": "^3.0.2"
+    "typescript": "^5"
   }
 }

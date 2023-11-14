@@ -6,13 +6,17 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
-import { addEntry } from '@/app/_actions'
+import { sendEmail } from '@/app/_actions'
 import styles from './contact_form.module.scss'
 import Container from '../container/container'
-import { FormDataSchema } from '@/lib/schema'
+import { ContactFormSchema } from '@/lib/schema'
 
-type Inputs = z.infer<typeof FormDataSchema>
-
+type Inputs = z.infer<typeof ContactFormSchema>
+type Result = {
+  success: boolean
+  data?: Inputs
+  error?: Error
+}
 
 const ContactForm = () => {
   const [data, setData] = useState<Inputs>()
@@ -22,27 +26,23 @@ const ContactForm = () => {
     handleSubmit,
     watch,
     reset,
-    formState: { errors }
+    formState: { errors, isSubmitting }
   } = useForm<Inputs>({
-    resolver: zodResolver(FormDataSchema)
+    resolver: zodResolver(ContactFormSchema)
   })
 
   const processForm: SubmitHandler<Inputs> = async data => {
-    const result = await addEntry(data)
+    const result = await sendEmail(data) as Result
 
-    if (!result) {
-      console.log('Something went wrong')
+    if (result?.success) {
+      console.log({ data: result.data })
+      setData(result.data)
+      reset()
       return
     }
 
-    if (result.error) {
-      // set local error state
-      console.log(result.error)
-      return
-    }
-
-    reset()
-    setData(result.data)
+    console.log(result?.error)
+    return
   }
 
   return (
@@ -61,7 +61,7 @@ const ContactForm = () => {
         <div className={styles.form_wrapper}>
           <form
             onSubmit={handleSubmit(processForm)}
-            className={styles.form}
+            className={cx(styles.form, {[styles.form__submitting]: isSubmitting})}
           >
             <label htmlFor="name" className={cx([styles.name, styles.label])}>
               <span className={styles.labelText}>Name</span>
@@ -96,7 +96,7 @@ const ContactForm = () => {
               )}
             </label>
 
-            <button className={styles.submit}>Submit</button>
+            <button className={cx(styles.submit, {[styles.disabled]: isSubmitting})} disabled={isSubmitting}>{isSubmitting ? 'Sending...' : 'Send'}</button>
           </form>
         </div>
 
