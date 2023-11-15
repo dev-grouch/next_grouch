@@ -75,6 +75,8 @@ $form-gap-y: 2.6em;
       content: 'Submitting...';
       opacity: .8;
       left: 0;
+      @include nexus-bold;
+      font-size: 2rem;
     }
   }
 
@@ -101,14 +103,27 @@ $form-gap-y: 2.6em;
 
   .form {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: $form-gap-x $form-gap-y;
     grid-auto-flow: row;
     grid-template-areas:
-      'name message'
-      'email message'
-      '. submit';
+      'name'
+      'email'
+      'message'
+      'submit';
+
+
+    @include small-up {
+      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-rows: auto auto auto;
+      gap: $form-gap-x $form-gap-y;
+      grid-auto-flow: row;
+      grid-template-areas:
+        'name message'
+        'email message'
+        '. submit';
+    }
 
     .name {
       grid-area: name;
