@@ -1,0 +1,18 @@
+@import '@styles/variables';
+
+.h2 {
+  @include amifer-bold;
+  color: white;
+  margin: 0;
+  font-weight: 600;
+  font-size: 2.4rem;
+
+  .highlight {
+    font-weight: 700;
+    color: var(--grouch-light-green);
+  }
+
+  @include small-up {
+    font-size: 3.4rem;
+  }
+}

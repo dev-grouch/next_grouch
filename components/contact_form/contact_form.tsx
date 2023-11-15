@@ -10,6 +10,8 @@ import { sendEmail } from '@/app/_actions'
 import styles from './contact_form.module.scss'
 import Container from '../container/container'
 import { ContactFormSchema } from '@/lib/schema'
+import H2 from '@components/h2/h2'
+import P from '../p/p'
 
 type Inputs = z.infer<typeof ContactFormSchema>
 type Result = {
@@ -62,11 +64,11 @@ const ContactForm = () => {
       id="contact">
       <Container>
         <div className={styles.form_content_wrapper}>
-          <h2>send us a note!</h2>
-          <p>
+          <H2>send us a note!</H2>
+          <P>
             Ready to turn your ideas into reality? We&apos;d love to hear from
             you! Fill out the form, and let&apos;s get started!
-          </p>
+          </P>
 
           <div className={styles.form_wrapper}>
             <form
@@ -78,7 +80,7 @@ const ContactForm = () => {
                 <input type="text" {...register('name', { required: true })} />
 
                 {errors.name?.message && (
-                <p className={styles.errorMsg}>{errors.name.message}</p>
+                <P className={styles.errorMsg}>{errors.name.message}</P>
               )}
               </label>
 
@@ -87,7 +89,7 @@ const ContactForm = () => {
                 <input type="email" {...register('email', { required: true })} />
 
                 {errors.email?.message && (
-                  <p className={styles.errorMsg}>{errors.email.message}</p>
+                  <P className={styles.errorMsg}>{errors.email.message}</P>
                 )}
               </label>
 
@@ -102,7 +104,7 @@ const ContactForm = () => {
                 />
 
                 {errors.message?.message && (
-                  <p className={styles.errorMsg}>{errors.message.message}</p>
+                  <P className={styles.errorMsg}>{errors.message.message}</P>
                 )}
               </label>
 
@@ -113,9 +115,9 @@ const ContactForm = () => {
 
         <div className={styles.form_thank_you_wrapper}>
           <h2>Thanks!</h2>
-          <p>
+          <P>
             We&apos;re happy to hear from you, and will be in touch shortly.
-          </p>
+          </P>
         </div>
       </Container>
     </Container>

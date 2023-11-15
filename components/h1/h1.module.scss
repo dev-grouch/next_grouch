@@ -1,0 +1,16 @@
+@import '@styles/variables';
+
+.h1 {
+  @include amifer-bold;
+  color: white;
+  margin: 0;
+  font-size: 3.2rem;
+
+  .highlight {
+    color: var(--grouch-light-green);
+  }
+
+  @include small-up {
+    font-size: 5rem;
+  }
+}
