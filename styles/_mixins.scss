@@ -37,3 +37,41 @@
     @content;
   }
 }
+
+@mixin  amifer-regular                        {
+  font-family: $amifer-font-family;
+  font-weight: $amifer-font-weight;
+  font-style: $amifer-font-style;
+  line-height: 1.2;
+}
+
+@mixin amifer-bold {
+  font-family: $amifer-font-family;
+  font-weight: 700;
+  font-style: $amifer-font-style;
+  line-height: 1.2;
+}
+
+@mixin amifer-italic {
+  font-family: $amifer-font-family;
+  font-weight: $amifer-font-weight;
+  font-style: italic;
+}
+
+@mixin nexus-regular {
+  font-family: $nexus-font-family;
+  font-weight: $nexus-font-weight;
+  font-style: $nexus-font-style;
+}
+
+@mixin nexus-bold {
+  font-family: $nexus-font-family;
+  font-weight: 700;
+  font-style: $nexus-font-style;
+}
+
+@mixin nexus-italic {
+  font-family: $nexus-font-family;
+  font-weight: $nexus-font-weight;
+  font-style: italic;
+}

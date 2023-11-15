@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/gvf4wof.css");
 @import '@styles/variables';
 @import '@styles/type';
 
@@ -129,6 +130,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+    @include amifer-regular;
 }
 
 a {

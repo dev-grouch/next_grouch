@@ -1,9 +1,12 @@
+@import '@styles/variables';
+
 /* HEADINGS ------------------------------------- */
 h1,
 h2,
 h3 {
   color: white;
   margin: 0;
+  @include amifer-bold;
 }
 
 h1 {
@@ -32,6 +35,14 @@ p {
   line-height: 1.5;
 }
 
+em {
+  @include amifer-italic;
+}
+
+strong {
+  @include amifer-bold;
+}
+
 @include small-up {
   h1 {
     font-size: 5rem;
@@ -45,7 +56,6 @@ p {
 
   p {
     font-size: 1.2rem;
-    line-height: 1.5;
   }
 }
 

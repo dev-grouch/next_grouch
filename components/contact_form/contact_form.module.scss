@@ -5,6 +5,7 @@ $form-gap-x: 1em;
 $form-gap-y: 2.6em;
 
 @mixin inputStyles {
+  @include nexus-regular;
   background: $grouch-off-white;
   color: $grouch-dirty-black;
   border: $input-border-width solid $grouch-dirty-black;
@@ -21,7 +22,7 @@ $form-gap-y: 2.6em;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size:                                    rem;
     width: 100%;
     height: 100%;
     top: 0;
@@ -122,6 +123,7 @@ $form-gap-y: 2.6em;
     }
 
     .submit {
+      @include nexus-bold;
       grid-area: submit;
       justify-self: end;
       width: fit-content;
@@ -158,21 +160,23 @@ $form-gap-y: 2.6em;
 
     textarea {
       resize: none;
-      height: calc(100% - (2 * $form-gap-x) + (2 * $input-border-width));
+      height: calc(100% - ((2 * $form-gap-x) + (2 * $input-border-width)));
     }
 
     .label {
       padding-bottom: 1.3em;
       position: relative;
+      @include nexus-bold;
 
       .labelText {
-        font-size: 0.8rem;
+        font-size: 1.5rem;
         font-weight: 700;
         color: $grouch-dirty-black;
       }
     }
 
     .errorMsg {
+      @include nexus-regular;
       position: absolute;
       bottom: 0;
       left: 0;
