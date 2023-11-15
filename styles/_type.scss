@@ -66,6 +66,12 @@ a {
   &:hover {
     color: var(--grouch-light-green);
   }
+
+  &.coming-soon {
+    color: var(--grouch-dark-yellow);
+    text-decoration: line-through;
+    cursor: help;
+  }
 }
 
 code {

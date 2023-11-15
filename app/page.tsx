@@ -29,7 +29,7 @@ export default function Home() {
         </p>
 
         <p>
-          <a href="#learnMore">learn more</a>
+          <a href="#learnMore" className='coming-soon' title="coming soon">learn more</a>
         </p>
       </Container>
 
@@ -47,7 +47,7 @@ export default function Home() {
         </p>
 
         <p>
-          <a href="#learnMore">learn more</a>
+          <a href="#learnMore" className='coming-soon' title="coming soon">learn more</a>
         </p>
       </Container>
 
@@ -62,7 +62,7 @@ export default function Home() {
         </p>
 
         <p>
-          <a href="#learnMore">learn more</a>
+          <a href="#learnMore" className='coming-soon' title="coming soon">learn more</a>
         </p>
       </Container>
     </main>
