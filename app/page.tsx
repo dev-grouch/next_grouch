@@ -1,11 +1,94 @@
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
+
 import styles from './page.module.scss'
 import Container from '@components/container/container'
 import ContactForm from '@components/contact_form/contact_form'
 import H1 from '@/components/h1/h1'
 import H2 from '@/components/h2/h2'
 import P from '@/components/p/p'
+import { getPage } from './content-queries'
 
-export default function Home() {
+type ComponentMetaSeo = {
+  __typename: string
+  seoTitle: string
+  seoDescription: string
+}
+
+type PageProps = {
+  data: {
+    attributes: {
+      slug: string
+      PageSEO: ComponentMetaSeo
+      PageContent: {
+        __typename: string
+        Heading: string[]
+        Content: string[]
+      }
+    }
+  }
+}
+
+async function getData() {
+  const client = new ApolloClient({
+    uri: 'http://localhost:1337/graphql',
+    cache: new InMemoryCache(),
+  })
+
+  const { data } = await client.query({
+    query: gql`
+      query {
+        pages {
+          data {
+            attributes {
+              slug
+              PageSEO {
+                seoTitle
+                seoDescription
+              }
+              PageContent {
+                __typename
+                ... on ComponentLayoutContainer {
+                  Heading {
+                    Text
+                  }
+                  Content {
+                    Text
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+  })
+
+  return {
+    pageContentBlocks: data.pages.data[0].attributes.PageContent,
+    pageSEO: data.pages.data[0].attributes.PageSEO,
+    slug: data.pages.data[0].attributes.slug,
+  }
+}
+
+export default async function Home() {
+  const { pageContentBlocks, pageSEO, slug } = await getPage('home')
+
+  pageContentBlocks.forEach((block) => {
+    console.log('block.Heading', block.Heading)
+
+    block.Content.forEach((content) => {
+      console.log('content.Text', content.Text)
+
+      content.Text.forEach((text) => {
+        console.log('text', text)
+
+        text.children.forEach((child) => {
+          console.log('child', child.text)
+        })
+      })
+    })
+  })
+
   return (
     <main className={styles.main}>
       <Container>
