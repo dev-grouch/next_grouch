@@ -13,21 +13,22 @@ export async function getPage(slug: string) {
         pages(filters: {slug: {eq: $slug}}) {
           data {
             attributes {
-              slug
-              PageSEO {
-                seoTitle
-                seoDescription
-              }
-              PageContent {
+              pageContent {
                 __typename
                 ... on ComponentLayoutContainer {
-                  Heading {
-                    Text
+                  heading {
+                    text
+                    level
                   }
-                  Content {
-                    Text
+                  content {
+                    text
                   }
                 }
+              }
+              slug
+              pageSEO {
+                seoTitle
+                seoDescription
               }
             }
           }
@@ -38,8 +39,8 @@ export async function getPage(slug: string) {
   }) as PagesResponse
 
   return {
-    pageContentBlocks: data.pages.data[0].attributes.PageContent,
-    pageSEO: data.pages.data[0].attributes.PageSEO,
+    pageContentBlocks: data.pages.data[0].attributes.pageContent,
+    pageSEO: data.pages.data[0].attributes.pageSEO,
     slug: data.pages.data[0].attributes.slug,
   }
 }
