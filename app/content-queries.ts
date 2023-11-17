@@ -1,12 +1,12 @@
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
-import { PagesResponse } from './types/strapi-content'
+import { PageEntity } from './generated/graphql-types'
 
 const client = new ApolloClient({
-  uri: 'http://localhost:1337/graphql',
+  uri: 'http://localhost:1337/graphql?v=1',
   cache: new InMemoryCache(),
 })
 
-export async function getPage(slug: string) {
+export async function getPage(slug: string): Promise<PageEntity> {
   const { data } = await client.query({
     query: gql`
       query GetPage($slug: String!) {
@@ -24,6 +24,13 @@ export async function getPage(slug: string) {
                     text
                   }
                 }
+                ... on ComponentHeroHeroOption {
+                  heroOptions {
+                    lineOne
+                    lineTwo
+                    moreTarget
+                  }
+                }
               }
               slug
               pageSEO {
@@ -36,11 +43,7 @@ export async function getPage(slug: string) {
       }
     `,
     variables: { slug }
-  }) as PagesResponse
+  })
 
-  return {
-    pageContentBlocks: data.pages.data[0].attributes.pageContent,
-    pageSEO: data.pages.data[0].attributes.pageSEO,
-    slug: data.pages.data[0].attributes.slug,
-  }
+  return data.pages.data[0]
 }

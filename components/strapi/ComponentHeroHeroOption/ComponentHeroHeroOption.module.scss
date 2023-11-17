@@ -1,0 +1,20 @@
+@import '@styles/variables';
+
+.hero {
+  &__options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+  }
+}
+
+.heroOption {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 2em;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'title'
+    'button';
+}
