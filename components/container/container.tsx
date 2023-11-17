@@ -43,9 +43,9 @@ const Container: React.FC<ContainerProps> = ({
   }, [id])
 
   return (
-    <div id={containerId} className={classes}>
+    <section id={containerId} className={classes}>
       {children}
-    </div>
+    </section>
   )
 }
 

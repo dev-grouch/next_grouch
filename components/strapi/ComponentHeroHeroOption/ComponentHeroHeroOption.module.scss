@@ -1,10 +1,14 @@
+@use 'sass:color';
+
 @import '@styles/variables';
 
 .hero {
+  background: color.adjust($grouch-light-yellow, $alpha: -.8);
+
   &__options {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 1rem;
+    grid-gap: 6em 1em;
   }
 }
 
@@ -17,4 +21,64 @@
   grid-template-areas:
     'title'
     'button';
+
+  .h2 {
+    text-align: center;
+    font-size: 1.6em;
+    text-shadow: -1px 1px 0 rgba(0, 0, 0, 0.8);
+
+    .line_one, .line_two {
+      display: block;
+    }
+
+    .line_two {
+      color: var(--grouch-dark-yellow);
+    }
+  }
+
+  .p {
+    grid-area: button;
+    text-align: center;
+    width: fit-content;
+    font-size: .8em;
+    line-height: 1em;
+    font-family: var(--grouch-font-family);
+    margin: 0 auto;
+    @include nexus-regular;
+  }
+
+  &__link {
+    position: relative;
+    justify-self: center;
+    width: fit-content;
+    line-height: 1em;
+    height: 100%;
+    padding: 0em 2em 0.3em 0.6em;
+    background-color: var(--grouch-dark-purple);
+    color: $grouch-white;
+    text-decoration: none;
+    transition: all 0.14s ease-in-out;
+    border-radius: 0.5em;
+    text-shadow: -1px 1px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.6);
+
+    &:after {
+      font-size: 1.3em;
+      position: absolute;
+      right: .5em;
+      top: 50%;
+      transform: translateY(-70%);
+      content: '↓';
+    }
+
+    &:hover {
+      background-color: var(--grouch-light-purple);
+      color: var(--grouch-white);
+      text-shadow: -1px 1px 0 color.adjust($grouch-dark-purple, $alpha: -.2);
+
+      &:after {
+        transform: translateY(-65%);
+      }
+    }
+  }
 }

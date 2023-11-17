@@ -2,7 +2,6 @@ import styles from './page.module.scss'
 import { getPage } from './content-queries'
 import ComponentLayoutContainer from '@/components/strapi/ComponentLayoutContainer/ComponentLayoutContainer'
 import { PageEntity, PagePageContentDynamicZone } from './generated/graphql-types'
-import Page from '@/components/strapi/Page/Page'
 import ComponentHeroHeroOption from '@/components/strapi/ComponentHeroHeroOption/ComponentHeroHeroOption'
 import ComponentTypographyContent from '@/components/strapi/ComponentTypographyContent/ComponentTypographyContent'
 import ComponentTypographyHeading from '@/components/strapi/ComponentTypographyHeading/ComponentTypographyHeading'
@@ -38,6 +37,7 @@ const renderComponent = (componentData :PagePageContentDynamicZone | null ) => {
           key={componentData.id}
           heading={componentData.heading}
           content={componentData.content}
+          id={componentData.id}
         />
       );
     case 'ComponentTypographyHeading':

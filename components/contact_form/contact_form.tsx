@@ -80,7 +80,7 @@ const ContactForm = () => {
                 <input type="text" {...register('name', { required: true })} />
 
                 {errors.name?.message && (
-                <P className={styles.errorMsg}>{errors.name.message}</P>
+                <P extraClass={styles.errorMsg}>{errors.name.message}</P>
               )}
               </label>
 
@@ -89,7 +89,7 @@ const ContactForm = () => {
                 <input type="email" {...register('email', { required: true })} />
 
                 {errors.email?.message && (
-                  <P className={styles.errorMsg}>{errors.email.message}</P>
+                  <P extraClass={styles.errorMsg}>{errors.email.message}</P>
                 )}
               </label>
 
@@ -104,7 +104,7 @@ const ContactForm = () => {
                 />
 
                 {errors.message?.message && (
-                  <P className={styles.errorMsg}>{errors.message.message}</P>
+                  <P extraClass={styles.errorMsg}>{errors.message.message}</P>
                 )}
               </label>
 

@@ -4,12 +4,12 @@ import styles from './p.module.scss'
 
 type PProps = {
   children: React.ReactNode
-  className?: string
+  extraClass?: string | string[]
 }
 
-const P = ({ children, className }: PProps) => {
+const P = ({ children, extraClass }: PProps) => {
   return (
-    <p className={cx(styles.p, className)}>
+    <p className={cx(styles.p, extraClass)}>
       {children}
     </p>
   )

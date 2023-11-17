@@ -14,6 +14,7 @@ const ComponentTypographyContainer = ({
   console.log('contentItems ✨', contentItems)
   return (
     <>
+    {/* TODO: give this similar treatment as componentlayoutcontainer, or user blockrenderer */}
       {contentItems.flatMap((item, itemIndex) =>
         item.text ? item.text.flatMap((text, textIndex) =>
           text.children.map((child, childIndex) => (

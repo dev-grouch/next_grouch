@@ -4,6 +4,9 @@ import Container from "@/components/container/container";
 import { ComponentHeroHeroOption } from '@/app/generated/graphql-types'
 
 import styles from './ComponentHeroHeroOption.module.scss'
+import H1 from '@/components/h1/h1';
+import P from '@/components/p/p';
+import H2 from '@/components/h2/h2';
 
 
 const ComponentHeroHeroOption = (heroData: ComponentHeroHeroOption) =>  {
@@ -13,8 +16,8 @@ const ComponentHeroHeroOption = (heroData: ComponentHeroHeroOption) =>  {
         {heroData.heroOptions.map((heroOption) => {
           return (
             <div className={styles.heroOption} key={heroOption?.id}>
-              <h1>{heroOption?.lineOne}<br />{heroOption?.lineTwo}</h1>
-              <p>{heroOption?.moreTarget}</p>
+              <H2 extraClass={styles.h2}><span className={styles.line_one}>{heroOption?.lineOne}</span> <span className={styles.line_two}>{heroOption?.lineTwo}</span></H2>
+              {heroOption?.moreTarget && <P extraClass={styles.p}><a href={heroOption.moreTarget} className={styles.heroOption__link}>more</a></P>}
             </div>
           )
         })}
