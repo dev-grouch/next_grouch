@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { PageSEO } from '@/app/types/strapi-content';
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import ComponentLayoutContainer from '../ComponentLayoutContainer/ComponentLayoutContainer';
@@ -13,8 +15,8 @@ const Blocks = ({ pageContentBlocks, pageSEO, slug }: BlocksProps) => {
     return (
         <>
             <BlocksRenderer
-                    content={pageContentBlocks}
-                />
+                content={pageContentBlocks}
+            />
         </>
     )
 }

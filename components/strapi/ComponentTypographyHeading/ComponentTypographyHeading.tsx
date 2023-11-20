@@ -1,11 +1,11 @@
-import { HeadingItem } from "@/app/types/strapi-content";
+import { Heading } from "@/app/types/strapi-content";
 import H1 from "@/components/h1/h1";
 import H2 from "@/components/h2/h2";
 
 const ComponentTypographyHeading = ({
   text,
   level
-}: HeadingItem) => {
+}: Heading) => {
   return (
     <>
       {level === 'h1' && <H1>{text}</H1>}

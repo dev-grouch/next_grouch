@@ -6,7 +6,11 @@ import ComponentHeroHeroOption from '@/components/strapi/ComponentHeroHeroOption
 import ComponentTypographyContent from '@/components/strapi/ComponentTypographyContent/ComponentTypographyContent'
 import ComponentTypographyHeading from '@/components/strapi/ComponentTypographyHeading/ComponentTypographyHeading'
 
-export const COMPONENT_MAP = {
+type ComponentTypeMap = {
+  [key: string]: React.ComponentType<any>
+};
+
+const COMPONENT_MAP: ComponentTypeMap = {
   'ComponentLayoutContainer': ComponentLayoutContainer,
   'ComponentTypographyContent': ComponentTypographyContent,
   'ComponentTypographyHeading': ComponentTypographyHeading,
@@ -27,9 +31,8 @@ const renderComponent = (componentData :PagePageContentDynamicZone | null ) => {
 
   switch (componentData.__typename) {
     case 'ComponentHeroHeroOption':
-      // Similar handling for hero options
       return (
-        <Component key={componentData.id} heroOptions={componentData.heroOptions} />
+        <Component key={componentData.id} heroData={componentData.heroOptions} />
       );
     case 'ComponentLayoutContainer':
       return (

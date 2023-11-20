@@ -74,6 +74,13 @@ export type ComponentHeroHeroOptionItemFiltersInput = {
   or?: InputMaybe<Array<InputMaybe<ComponentHeroHeroOptionItemFiltersInput>>>;
 };
 
+export type ComponentLayoutContactForm = {
+  __typename?: 'ComponentLayoutContactForm';
+  content?: Maybe<ComponentTypographyContent>;
+  heading?: Maybe<ComponentTypographyHeading>;
+  id: Scalars['ID']['output'];
+};
+
 export type ComponentLayoutContainer = {
   __typename?: 'ComponentLayoutContainer';
   className?: Maybe<Enum_Componentlayoutcontainer_Classname>;
@@ -204,7 +211,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']['input']>;
 };
 
-export type GenericMorph = ComponentHeroHeroOption | ComponentHeroHeroOptionItem | ComponentLayoutContainer | ComponentMetaSeo | ComponentTypographyContent | ComponentTypographyHeading | I18NLocale | Page | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = ComponentHeroHeroOption | ComponentHeroHeroOptionItem | ComponentLayoutContactForm | ComponentLayoutContainer | ComponentMetaSeo | ComponentTypographyContent | ComponentTypographyHeading | I18NLocale | Page | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type I18NLocale = {
   __typename?: 'I18NLocale';
@@ -537,7 +544,7 @@ export type PageInput = {
   slug?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PagePageContentDynamicZone = ComponentHeroHeroOption | ComponentLayoutContainer | ComponentTypographyContent | ComponentTypographyHeading | Error;
+export type PagePageContentDynamicZone = ComponentHeroHeroOption | ComponentLayoutContactForm | ComponentLayoutContainer | ComponentTypographyContent | ComponentTypographyHeading | Error;
 
 export type Pagination = {
   __typename?: 'Pagination';

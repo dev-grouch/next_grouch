@@ -57,7 +57,7 @@ export const GrouchShapeTwo = () => (
 
 export const Hands = () => (
   <div className={styles['hands']}>
-    <Parallax speed={40} translateY={[55, -5]} scale={[.8, 1.1]}>
+    <Parallax speed={-5} translateX={[5, -5]} translateY={[55, -5]} scale={[.8, 1.2]}>
       <Image src={ImgHands} alt="Hands" className={styles['hero-image']} />
     </Parallax>
   </div>

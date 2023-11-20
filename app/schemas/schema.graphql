@@ -228,6 +228,12 @@ type ComponentHeroHeroOption {
   ): [ComponentHeroHeroOptionItem]!
 }
 
+type ComponentLayoutContactForm {
+  id: ID!
+  heading: ComponentTypographyHeading
+  content: ComponentTypographyContent
+}
+
 enum ENUM_COMPONENTLAYOUTCONTAINER_CLASSNAME {
   full
   center
@@ -294,6 +300,7 @@ union PagePageContentDynamicZone =
   | ComponentTypographyContent
   | ComponentTypographyHeading
   | ComponentHeroHeroOption
+  | ComponentLayoutContactForm
   | Error
 
 scalar PagePageContentDynamicZoneInput
@@ -661,6 +668,7 @@ type UsersPermissionsUserRelationResponseCollection {
 union GenericMorph =
     ComponentHeroHeroOptionItem
   | ComponentHeroHeroOption
+  | ComponentLayoutContactForm
   | ComponentLayoutContainer
   | ComponentMetaSeo
   | ComponentTypographyContent
