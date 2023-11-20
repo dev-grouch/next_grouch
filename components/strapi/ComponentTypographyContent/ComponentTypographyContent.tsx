@@ -1,30 +1,17 @@
 'use client'
 
-import { ContentItem } from "@/app/types/strapi-content";
+import { ComponentTypographyContent } from "@/app/generated/graphql-types";
 import P from "@/components/p/p";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
-type ComponentTypographyContainerProps = {
-  contentItems: ContentItem[];
-};
-
-
-const ComponentTypographyContainer = ({
-  contentItems,
-}: ComponentTypographyContainerProps) => {
-  console.log('contentItems ✨', contentItems)
+const ComponentTypographyContainer = (props: ComponentTypographyContent) => {
   return (
-    <>
-    {/* TODO: give this similar treatment as componentlayoutcontainer, or user blockrenderer */}
-      {contentItems.flatMap((item, itemIndex) =>
-        item.text ? item.text.flatMap((text, textIndex) =>
-          text.children.map((child, childIndex) => (
-            <P key={`${itemIndex}-${textIndex}-${childIndex}`}>
-              {child.text}
-            </P>
-          ))
-        ) : []
-      )}
-    </>
+    <BlocksRenderer
+      content={props.text}
+      blocks={{
+        paragraph: ({ children })  => <P>{children}</P>
+      }}
+    />
   )
 }
 

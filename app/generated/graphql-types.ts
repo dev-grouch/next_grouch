@@ -76,25 +76,18 @@ export type ComponentHeroHeroOptionItemFiltersInput = {
 
 export type ComponentLayoutContactForm = {
   __typename?: 'ComponentLayoutContactForm';
-  content?: Maybe<ComponentTypographyContent>;
-  heading?: Maybe<ComponentTypographyHeading>;
+  content: ComponentTypographyContent;
+  heading: ComponentTypographyHeading;
   id: Scalars['ID']['output'];
 };
 
 export type ComponentLayoutContainer = {
   __typename?: 'ComponentLayoutContainer';
   className?: Maybe<Enum_Componentlayoutcontainer_Classname>;
-  content?: Maybe<Array<Maybe<ComponentTypographyContent>>>;
+  content?: Maybe<ComponentTypographyContent>;
   heading?: Maybe<ComponentTypographyHeading>;
   htmlId?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
-};
-
-
-export type ComponentLayoutContainerContentArgs = {
-  filters?: InputMaybe<ComponentTypographyContentFiltersInput>;
-  pagination?: InputMaybe<PaginationArg>;
-  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type ComponentMetaSeo = {
@@ -122,13 +115,6 @@ export type ComponentTypographyContent = {
   __typename?: 'ComponentTypographyContent';
   id: Scalars['ID']['output'];
   text?: Maybe<Scalars['JSON']['output']>;
-};
-
-export type ComponentTypographyContentFiltersInput = {
-  and?: InputMaybe<Array<InputMaybe<ComponentTypographyContentFiltersInput>>>;
-  not?: InputMaybe<ComponentTypographyContentFiltersInput>;
-  or?: InputMaybe<Array<InputMaybe<ComponentTypographyContentFiltersInput>>>;
-  text?: InputMaybe<JsonFilterInput>;
 };
 
 export type ComponentTypographyHeading = {

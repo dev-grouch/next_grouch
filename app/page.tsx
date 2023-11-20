@@ -5,6 +5,7 @@ import { PageEntity, PagePageContentDynamicZone } from './generated/graphql-type
 import ComponentHeroHeroOption from '@/components/strapi/ComponentHeroHeroOption/ComponentHeroHeroOption'
 import ComponentTypographyContent from '@/components/strapi/ComponentTypographyContent/ComponentTypographyContent'
 import ComponentTypographyHeading from '@/components/strapi/ComponentTypographyHeading/ComponentTypographyHeading'
+import ComponentLayoutContactForm from '@/components/strapi/ComponentLayoutContactForm/ComponentLayoutContactForm'
 
 type ComponentTypeMap = {
   [key: string]: React.ComponentType<any>
@@ -15,6 +16,7 @@ const COMPONENT_MAP: ComponentTypeMap = {
   'ComponentTypographyContent': ComponentTypographyContent,
   'ComponentTypographyHeading': ComponentTypographyHeading,
   'ComponentHeroHeroOption': ComponentHeroHeroOption,
+  'ComponentLayoutContactForm': ComponentLayoutContactForm,
   'Error': () => <div>ERROR</div>
 }
 

@@ -230,8 +230,8 @@ type ComponentHeroHeroOption {
 
 type ComponentLayoutContactForm {
   id: ID!
-  heading: ComponentTypographyHeading
-  content: ComponentTypographyContent
+  heading: ComponentTypographyHeading!
+  content: ComponentTypographyContent!
 }
 
 enum ENUM_COMPONENTLAYOUTCONTAINER_CLASSNAME {
@@ -242,11 +242,7 @@ enum ENUM_COMPONENTLAYOUTCONTAINER_CLASSNAME {
 type ComponentLayoutContainer {
   id: ID!
   heading: ComponentTypographyHeading
-  content(
-    filters: ComponentTypographyContentFiltersInput
-    pagination: PaginationArg = {}
-    sort: [String] = []
-  ): [ComponentTypographyContent]
+  content: ComponentTypographyContent
   className: ENUM_COMPONENTLAYOUTCONTAINER_CLASSNAME
   htmlId: String
 }
@@ -269,13 +265,6 @@ type ComponentMetaSeo {
   id: ID!
   seoTitle: String
   seoDescription: String
-}
-
-input ComponentTypographyContentFiltersInput {
-  text: JSONFilterInput
-  and: [ComponentTypographyContentFiltersInput]
-  or: [ComponentTypographyContentFiltersInput]
-  not: ComponentTypographyContentFiltersInput
 }
 
 type ComponentTypographyContent {
