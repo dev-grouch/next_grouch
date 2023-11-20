@@ -241,8 +241,8 @@ enum ENUM_COMPONENTLAYOUTCONTAINER_CLASSNAME {
 
 type ComponentLayoutContainer {
   id: ID!
-  heading: ComponentTypographyHeading
-  content: ComponentTypographyContent
+  heading: ComponentTypographyHeading!
+  content: ComponentTypographyContent!
   className: ENUM_COMPONENTLAYOUTCONTAINER_CLASSNAME
   htmlId: String
 }

@@ -31,6 +31,15 @@ export async function getPage(slug: string): Promise<PageEntity> {
                     moreTarget
                   }
                 }
+                ... on ComponentLayoutContactForm {
+                  heading {
+                    text
+                    level
+                  }
+                  content {
+                    text
+                  }
+                }
               }
               slug
               pageSEO {

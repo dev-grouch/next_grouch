@@ -13,8 +13,8 @@ import { ContactFormSchema } from '@/lib/schema'
 import H2 from '@components/h2/h2'
 import P from '../p/p'
 import ComponentTypographyHeading from '../strapi/ComponentTypographyHeading/ComponentTypographyHeading'
-import { ContentItem, Heading } from '@/app/types/strapi-content'
 import { ComponentLayoutContactForm } from '@/app/generated/graphql-types'
+import ComponentTypographyContainer from '../strapi/ComponentTypographyContent/ComponentTypographyContent'
 
 type Inputs = z.infer<typeof ContactFormSchema>
 type Result = {
@@ -27,6 +27,8 @@ type FormStateClass = 'form__idle' | 'form__submitting' | 'form__submitted';
 const ContactForm = ({ heading, content, id }: ComponentLayoutContactForm) => {
   const [data, setData] = useState<Inputs>()
   const [formState, setFormState] = useState<FormStateClass>('form__idle')
+
+  console.log(heading)
 
   const {
     register,
@@ -69,10 +71,7 @@ const ContactForm = ({ heading, content, id }: ComponentLayoutContactForm) => {
         <div className={styles.form_content_wrapper}>
           <ComponentTypographyHeading {...heading} />
 
-          <P>
-            Ready to turn your ideas into reality? We&apos;d love to hear from
-            you! Fill out the form, and let&apos;s get started!
-          </P>
+          {content && <ComponentTypographyContainer {...content} />}
 
           <div className={styles.form_wrapper}>
             <form

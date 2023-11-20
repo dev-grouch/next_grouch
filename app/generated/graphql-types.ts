@@ -84,8 +84,8 @@ export type ComponentLayoutContactForm = {
 export type ComponentLayoutContainer = {
   __typename?: 'ComponentLayoutContainer';
   className?: Maybe<Enum_Componentlayoutcontainer_Classname>;
-  content?: Maybe<ComponentTypographyContent>;
-  heading?: Maybe<ComponentTypographyHeading>;
+  content: ComponentTypographyContent;
+  heading: ComponentTypographyHeading;
   htmlId?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
 };

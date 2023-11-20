@@ -45,6 +45,16 @@ const renderComponent = (componentData :PagePageContentDynamicZone | null ) => {
           id={componentData.id}
         />
       );
+    case 'ComponentLayoutContactForm':
+      console.log("🚨", componentData)
+      return (
+        <Component
+          key={componentData.id}
+          heading={componentData.heading}
+          content={componentData.content}
+          id={componentData.id}
+        />
+      );
     case 'ComponentTypographyHeading':
       return (
         <Component key={componentData.id} text={componentData.text} level={componentData.level} />

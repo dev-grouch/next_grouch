@@ -23,6 +23,10 @@
       padding-top: 0;
       padding-bottom: 0;
     }
+
+    .container + & {
+      margin-top: $container-padding--top;
+    }
   }
 
   &__flex {
@@ -85,6 +89,10 @@
       padding-right: 0;
       padding-left: 0;
       margin-bottom: $container-padding--bottom--xl;
+
+      .container + & {
+        margin-top: $container-padding--top--xl;
+      }
     }
 
     &__flex {

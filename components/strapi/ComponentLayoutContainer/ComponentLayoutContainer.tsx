@@ -6,7 +6,6 @@ import ComponentTypographyContainer from "../ComponentTypographyContent/Componen
 const ComponentLayoutContainer = ({
   heading,
   content,
-  id,
 }: ComponentLayoutContainer) => {
   return (
     <Container>
