@@ -34,7 +34,7 @@ const renderComponent = (componentData :PagePageContentDynamicZone | null ) => {
   switch (componentData.__typename) {
     case 'ComponentHeroHeroOption':
       return (
-        <Component key={componentData.id} heroData={componentData.heroOptions} />
+        <Component key={componentData.id} {...componentData} />
       );
     case 'ComponentLayoutContainer':
       return (
@@ -46,7 +46,6 @@ const renderComponent = (componentData :PagePageContentDynamicZone | null ) => {
         />
       );
     case 'ComponentLayoutContactForm':
-      console.log("🚨", componentData)
       return (
         <Component
           key={componentData.id}

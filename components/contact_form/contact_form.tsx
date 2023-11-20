@@ -28,8 +28,6 @@ const ContactForm = ({ heading, content, id }: ComponentLayoutContactForm) => {
   const [data, setData] = useState<Inputs>()
   const [formState, setFormState] = useState<FormStateClass>('form__idle')
 
-  console.log(heading)
-
   const {
     register,
     handleSubmit,

@@ -12,9 +12,9 @@ const ComponentHeroHeroOption = (heroData: ComponentHeroHeroOption) =>  {
   return (
     <Container full extraClass={cx(styles.hero)} color='yellow'>
       <Container extraClass={styles.hero__options}>
-        {heroData.heroOptions && heroData.heroOptions.map((heroOption) => {
+        {heroData && heroData.heroOptions.map((heroOption, index) => {
           return (
-            <div className={styles.heroOption} key={heroOption?.id}>
+            <div className={styles.heroOption} key={index}>
               <H2 extraClass={styles.h2}><span className={styles.line_one}>{heroOption?.lineOne}</span> <span className={styles.line_two}>{heroOption?.lineTwo}</span></H2>
               {heroOption?.moreTarget && <P extraClass={styles.p}><a href={heroOption.moreTarget} className={styles.heroOption__link}>more</a></P>}
             </div>

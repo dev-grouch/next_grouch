@@ -6,9 +6,9 @@
   background: color.adjust($grouch-light-yellow, $alpha: -.8);
 
   &__options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 6em 1em;
+    display: flex;
+    gap: 6em 1em;
+    flex-wrap: wrap;
   }
 }
 
@@ -17,6 +17,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 2em;
+  justify-items: center;
   grid-auto-flow: row;
   grid-template-areas:
     'title'
