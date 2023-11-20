@@ -11,7 +11,27 @@ import Providers from './providers'
 export const metadata: Metadata = {
   title: 'Welcome to Grouch.dev — NextJS edition',
   description:
-    'Web development and programming services. Based in the Asheville, NC area. Custom websites, small business email support, and contract programming.'
+    'Web development and programming services. Based in the Asheville, NC area. Custom websites, small business email support, and contract programming.',
+  icons: [
+    {
+      rel: 'icon',
+      url: '/favicon.ico',
+      sizes: '32x32',
+    },
+    {
+      rel: 'icon',
+      url: '/icon.svg',
+      type: 'image/svg+xml',
+    },
+    {
+      rel: 'apple-touch-icon',
+      url: '/apple-touch-icon.png',
+    },
+    {
+      rel: 'manifest',
+      url: '/site.webmanifest',
+    },
+  ],
 }
 
 export default function RootLayout({
