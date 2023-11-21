@@ -1,12 +1,15 @@
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 import { PageEntity } from './generated/graphql-types'
 
+const cacheBust = new Date().getMinutes()
+
 const client = new ApolloClient({
-  uri: 'http://localhost:1337/graphql?v=1',
+  uri: `${process.env.STRAPI_GRAPHQL_ENDPOINT}?cacheBust=${cacheBust}`,
   cache: new InMemoryCache(),
 })
 
 export async function getPage(slug: string): Promise<PageEntity> {
+  console.log('cacheBust', cacheBust)
   const { data } = await client.query({
     query: gql`
       query GetPage($slug: String!) {
