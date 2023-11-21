@@ -1,4 +1,4 @@
-  import cx from 'classnames'
+import cx from 'classnames'
 import type { Metadata } from 'next'
 
 import './globals.scss'
