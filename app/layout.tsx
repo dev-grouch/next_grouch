@@ -1,7 +1,7 @@
+import './globals.scss'
 import cx from 'classnames'
 import type { Metadata } from 'next'
 
-import './globals.scss'
 import Header from '@components/header/header'
 import Background from '@components/background/background'
 import Footer from '@components/footer/footer'
