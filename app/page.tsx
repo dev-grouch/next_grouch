@@ -42,6 +42,7 @@ const renderComponent = (componentData :PagePageContentDynamicZone | null ) => {
           key={componentData.id}
           heading={componentData.heading}
           content={componentData.content}
+          call_to_action={componentData.call_to_action}
           htmlId={componentData.htmlId}
         />
       );

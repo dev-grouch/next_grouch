@@ -83,6 +83,7 @@ export type ComponentLayoutContactForm = {
 
 export type ComponentLayoutContainer = {
   __typename?: 'ComponentLayoutContainer';
+  call_to_action?: Maybe<ComponentTypographyActionLink>;
   className?: Maybe<Enum_Componentlayoutcontainer_Classname>;
   content: ComponentTypographyContent;
   heading: ComponentTypographyHeading;
@@ -109,6 +110,13 @@ export type ComponentMetaSeoInput = {
   id?: InputMaybe<Scalars['ID']['input']>;
   seoDescription?: InputMaybe<Scalars['String']['input']>;
   seoTitle?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ComponentTypographyActionLink = {
+  __typename?: 'ComponentTypographyActionLink';
+  action_text?: Maybe<Scalars['String']['output']>;
+  action_url: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
 };
 
 export type ComponentTypographyContent = {
@@ -197,7 +205,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']['input']>;
 };
 
-export type GenericMorph = ComponentHeroHeroOption | ComponentHeroHeroOptionItem | ComponentLayoutContactForm | ComponentLayoutContainer | ComponentMetaSeo | ComponentTypographyContent | ComponentTypographyHeading | I18NLocale | Page | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = ComponentHeroHeroOption | ComponentHeroHeroOptionItem | ComponentLayoutContactForm | ComponentLayoutContainer | ComponentMetaSeo | ComponentTypographyActionLink | ComponentTypographyContent | ComponentTypographyHeading | I18NLocale | Page | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type I18NLocale = {
   __typename?: 'I18NLocale';

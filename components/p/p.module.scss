@@ -8,3 +8,21 @@
     font-size: 1.2rem;
   }
 }
+
+.action_link {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--grouch-dark-yellow);
+  text-decoration: underline;
+  cursor: pointer;
+
+  @include small-up {
+    font-size: 1.4rem;
+  }
+
+  a {
+    color: var(--grouch-dark-yellow);
+    text-decoration: underline;
+  }
+}

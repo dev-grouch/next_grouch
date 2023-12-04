@@ -4,7 +4,7 @@ import { PageEntity } from './generated/graphql-types'
 const cacheBust = new Date().getMinutes()
 
 const client = new ApolloClient({
-  uri: `${process.env.STRAPI_GRAPHQL_ENDPOINT}?cacheBust=${cacheBust}`,
+  uri: `${process.env.STRAPI_GRAPHQL_ENDPOINT_LOCAL}?cacheBust=${cacheBust}`,
   cache: new InMemoryCache(),
 })
 
@@ -25,6 +25,10 @@ export async function getPage(slug: string): Promise<PageEntity> {
                   }
                   content {
                     text
+                  }
+                  call_to_action {
+                    action_text
+                    action_url
                   }
                   htmlId
                 }

@@ -245,6 +245,7 @@ type ComponentLayoutContainer {
   content: ComponentTypographyContent!
   className: ENUM_COMPONENTLAYOUTCONTAINER_CLASSNAME
   htmlId: String
+  call_to_action: ComponentTypographyActionLink
 }
 
 input ComponentMetaSeoFiltersInput {
@@ -265,6 +266,12 @@ type ComponentMetaSeo {
   id: ID!
   seoTitle: String
   seoDescription: String
+}
+
+type ComponentTypographyActionLink {
+  id: ID!
+  action_text: String
+  action_url: String!
 }
 
 type ComponentTypographyContent {
@@ -660,6 +667,7 @@ union GenericMorph =
   | ComponentLayoutContactForm
   | ComponentLayoutContainer
   | ComponentMetaSeo
+  | ComponentTypographyActionLink
   | ComponentTypographyContent
   | ComponentTypographyHeading
   | Page

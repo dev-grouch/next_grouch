@@ -40,8 +40,6 @@ const Container: React.FC<ContainerProps> = ({
   }, [color, extraClass, full])
 
   const containerId = useMemo(() => {
-    console.log('🏳️', id)
-    console.log('id', id)
     return id ? id : undefined
   }, [id])
 
