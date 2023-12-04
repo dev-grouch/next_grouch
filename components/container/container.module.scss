@@ -6,6 +6,27 @@
   padding: $container-padding--top $container-padding--right
     $container-padding--bottom $container-padding--left;
 
+  h1 {
+    text-shadow: -1px 1px 0 rgba(0,0,0, .5);
+  }
+
+  h2 {
+    max-width: 80%;
+    text-shadow: -1px 1px 0 rgba(0,0,0, .5);
+  }
+
+  p {
+    margin: 1em 0 0;
+    padding: 0;
+    width: 80%;
+    min-width: 300px;
+    text-shadow: -1px 1px 0 rgba(0,0,0, .5);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
   &__center {
     text-align: center;
   }
@@ -63,21 +84,7 @@
     h3,
     p {
       color: var(--grouch-dirty-black);
-    }
-  }
-
-  h2 {
-    max-width: 80%;
-  }
-
-  p {
-    margin: 1em 0 0;
-    padding: 0;
-    width: 80%;
-    min-width: 300px;
-
-    &:first-child {
-      margin-top: 0;
+      text-shadow: 0 0 0;
     }
   }
 

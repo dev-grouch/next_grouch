@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import cx from 'classnames'
 import styles from './container.module.scss'
+import { Maybe } from '@/app/generated/graphql-types'
 
 type Colors = 'white' | 'black' | 'blue' | 'green' | 'red' | 'yellow' | 'purple'
 
@@ -8,7 +9,7 @@ interface ContainerProps {
   color?: Colors
   extraClass?: string | string[]
   full?: boolean
-  id?: string
+  id?: Maybe<string> | undefined
   children: React.ReactNode
 }
 
@@ -39,6 +40,8 @@ const Container: React.FC<ContainerProps> = ({
   }, [color, extraClass, full])
 
   const containerId = useMemo(() => {
+    console.log('🏳️', id)
+    console.log('id', id)
     return id ? id : undefined
   }, [id])
 

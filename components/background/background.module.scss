@@ -56,13 +56,6 @@
   right: 0;
   height: 100%;
   z-index: 3;
-  perspective: 500px;
-  object-fit: contain;
-
-  svg {
-    width: 100%;
-    height: 120vh;
-  }
 }
 
 .shape-two {
@@ -73,11 +66,6 @@
   z-index: 2;
   perspective: 500px;
   object-fit: contain;
-
-  svg {
-    width: 100%;
-    height: 120vh;
-  }
 }
 
 .hands {

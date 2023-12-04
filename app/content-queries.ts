@@ -26,6 +26,7 @@ export async function getPage(slug: string): Promise<PageEntity> {
                   content {
                     text
                   }
+                  htmlId
                 }
                 ... on ComponentHeroHeroOption {
                   heroOptions {

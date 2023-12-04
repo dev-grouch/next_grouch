@@ -4,11 +4,13 @@ import ComponentTypographyHeading from "../ComponentTypographyHeading/ComponentT
 import ComponentTypographyContainer from "../ComponentTypographyContent/ComponentTypographyContent";
 
 const ComponentLayoutContainer = ({
-  heading,
   content,
+  heading,
+  htmlId,
 }: ComponentLayoutContainer) => {
+  console.log("☮️", htmlId);
   return (
-    <Container>
+    <Container id={htmlId}>
       {heading && <ComponentTypographyHeading {...heading} />}
 
       {content && <ComponentTypographyContainer {...content} />}

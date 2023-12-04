@@ -42,7 +42,7 @@ const renderComponent = (componentData :PagePageContentDynamicZone | null ) => {
           key={componentData.id}
           heading={componentData.heading}
           content={componentData.content}
-          id={componentData.id}
+          htmlId={componentData.htmlId}
         />
       );
     case 'ComponentLayoutContactForm':

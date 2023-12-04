@@ -1,8 +1,7 @@
 import cx from 'classnames'
 
-import Container from "@/components/container/container";
 import { ComponentHeroHeroOption } from '@/app/generated/graphql-types'
-
+import Container from "@/components/container/container"
 import styles from './ComponentHeroHeroOption.module.scss'
 import P from '@/components/p/p';
 import H2 from '@/components/h2/h2';
