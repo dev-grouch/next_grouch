@@ -1,7 +1,7 @@
 import styles from './page.module.scss'
-import { getPage } from './content-queries'
+import { getPage } from '../content-queries'
 import ComponentLayoutContainer from '@/components/strapi/ComponentLayoutContainer/ComponentLayoutContainer'
-import { PageEntity, PagePageContentDynamicZone } from './generated/graphql-types'
+import { PageEntity, PagePageContentDynamicZone } from '../generated/graphql-types'
 import ComponentHeroHeroOption from '@/components/strapi/ComponentHeroHeroOption/ComponentHeroHeroOption'
 import ComponentTypographyContent from '@/components/strapi/ComponentTypographyContent/ComponentTypographyContent'
 import ComponentTypographyHeading from '@/components/strapi/ComponentTypographyHeading/ComponentTypographyHeading'
@@ -65,8 +65,10 @@ const renderComponent = (componentData :PagePageContentDynamicZone | null ) => {
   }
 }
 
-export default async function Page() {
-  const data: PageEntity = await getPage('home')
+export default async function Page({ params }: { params: { page: string } }) {
+  const slug = params?.page || 'home'
+  console.log('[page] slug', slug)
+  const data: PageEntity = await getPage(slug)
   const pageContent = data?.attributes?.pageContent
 
   return (
