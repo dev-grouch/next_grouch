@@ -1,3 +1,15 @@
+## 🚧 under construction 🚧
+
+### about
+
+This is a NextJS 14 project with TypeScript. It gets content from a headless CMS (Strapi) and renders components that correspond to the content "block" type. Currentlu deployed on Vercel.
+
+#### 📝 component and style structure
+
+This is very much a work in progress. The current structure will get cleaned up as the project progresses.
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
