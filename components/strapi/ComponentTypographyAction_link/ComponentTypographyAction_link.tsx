@@ -1,6 +1,7 @@
 import { ComponentTypographyActionLink } from "@/app/generated/graphql-types";
 import P from "@/components/p/p";
 import styles from "@/components/p/p.module.scss";
+import Link from "next/link";
 
 const ComponentTypographyAction_link = ({
   action_text,
@@ -8,9 +9,9 @@ const ComponentTypographyAction_link = ({
 }: ComponentTypographyActionLink) => {
   return (
     <P extraClass={styles.action_link}>
-      <a href={action_url}>
+      <Link href={action_url}>
         {action_text}
-      </a>
+      </Link>
     </P>
   );
 };

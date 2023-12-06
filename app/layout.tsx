@@ -8,6 +8,7 @@ import Background from '@components/background/background'
 import Footer from '@components/footer/footer'
 import styles from './layout.module.scss'
 import Providers from './providers'
+import GoogleAnalytics from '@/components/meta/google_analytics'
 
 export const metadata: Metadata = {
   title: 'Welcome to Grouch.dev — NextJS edition',
@@ -42,20 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {process.env.NODE_ENV === 'production' && (
-        <>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-6BK8V3W198" />
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-6BK8V3W198');
-          `}
-        </Script>
-        </>
-      )}
+      <GoogleAnalytics />
       <body className={cx(styles.body)}>
           <Providers>
             <div className="foreground">
