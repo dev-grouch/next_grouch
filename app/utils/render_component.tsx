@@ -4,12 +4,14 @@ import ComponentLayoutContainer from "@/components/strapi/ComponentLayoutContain
 import ComponentTypographyContent from "@/components/strapi/ComponentTypographyContent/ComponentTypographyContent";
 import ComponentTypographyHeading from "@/components/strapi/ComponentTypographyHeading/ComponentTypographyHeading";
 import { PagePageContentDynamicZone } from "../generated/graphql-types";
+import StrapiImage from "@/components/strapi/ComponentMediaImage/ComponentMediaImage";
 
 type ComponentTypeMap = {
   [key: string]: React.ComponentType<any>
 };
 
 const COMPONENT_MAP: ComponentTypeMap = {
+  'ComponentMediaImage': StrapiImage,
   'ComponentLayoutContainer': ComponentLayoutContainer,
   'ComponentTypographyContent': ComponentTypographyContent,
   'ComponentTypographyHeading': ComponentTypographyHeading,
@@ -57,7 +59,15 @@ const renderComponent = (componentData :PagePageContentDynamicZone | null ) => {
       return (
         <Component key={componentData.id} text={componentData.text} level={componentData.level} />
       );
-    // ... other cases
+    case 'ComponentMediaImage':
+      return (
+        <Component
+          key={componentData.id}
+          title={componentData.title}
+          description={componentData.description}
+          image_file={componentData.image_file}
+        />
+      );
     default:
       return <div>No Component...</div>;
   }
