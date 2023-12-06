@@ -248,6 +248,54 @@ type ComponentLayoutContainer {
   call_to_action: ComponentTypographyActionLink
 }
 
+input ComponentMediaImageFiltersInput {
+  title: StringFilterInput
+  description: StringFilterInput
+  and: [ComponentMediaImageFiltersInput]
+  or: [ComponentMediaImageFiltersInput]
+  not: ComponentMediaImageFiltersInput
+}
+
+type ComponentMediaImage {
+  id: ID!
+  image_file(
+    filters: UploadFileFiltersInput
+    pagination: PaginationArg = {}
+    sort: [String] = []
+  ): UploadFileRelationResponseCollection!
+  title: String
+  description: String
+}
+
+type ComponentMediaSlider {
+  id: ID!
+  slider_video(
+    filters: ComponentMediaVideoFiltersInput
+    pagination: PaginationArg = {}
+    sort: [String] = []
+  ): [ComponentMediaVideo]
+  slider_image(
+    filters: ComponentMediaImageFiltersInput
+    pagination: PaginationArg = {}
+    sort: [String] = []
+  ): [ComponentMediaImage]
+}
+
+input ComponentMediaVideoFiltersInput {
+  description: StringFilterInput
+  title: StringFilterInput
+  and: [ComponentMediaVideoFiltersInput]
+  or: [ComponentMediaVideoFiltersInput]
+  not: ComponentMediaVideoFiltersInput
+}
+
+type ComponentMediaVideo {
+  id: ID!
+  video_file: UploadFileEntityResponse!
+  description: String
+  title: String
+}
+
 input ComponentMetaSeoFiltersInput {
   seoTitle: StringFilterInput
   seoDescription: StringFilterInput
@@ -297,6 +345,9 @@ union PagePageContentDynamicZone =
   | ComponentTypographyHeading
   | ComponentHeroHeroOption
   | ComponentLayoutContactForm
+  | ComponentMediaImage
+  | ComponentMediaVideo
+  | ComponentMediaSlider
   | Error
 
 scalar PagePageContentDynamicZoneInput
@@ -666,6 +717,9 @@ union GenericMorph =
   | ComponentHeroHeroOption
   | ComponentLayoutContactForm
   | ComponentLayoutContainer
+  | ComponentMediaImage
+  | ComponentMediaSlider
+  | ComponentMediaVideo
   | ComponentMetaSeo
   | ComponentTypographyActionLink
   | ComponentTypographyContent

@@ -91,6 +91,66 @@ export type ComponentLayoutContainer = {
   id: Scalars['ID']['output'];
 };
 
+export type ComponentMediaImage = {
+  __typename?: 'ComponentMediaImage';
+  description?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+  image_file: UploadFileRelationResponseCollection;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+export type ComponentMediaImageImage_FileArgs = {
+  filters?: InputMaybe<UploadFileFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ComponentMediaImageFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentMediaImageFiltersInput>>>;
+  description?: InputMaybe<StringFilterInput>;
+  not?: InputMaybe<ComponentMediaImageFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentMediaImageFiltersInput>>>;
+  title?: InputMaybe<StringFilterInput>;
+};
+
+export type ComponentMediaSlider = {
+  __typename?: 'ComponentMediaSlider';
+  id: Scalars['ID']['output'];
+  slider_image?: Maybe<Array<Maybe<ComponentMediaImage>>>;
+  slider_video?: Maybe<Array<Maybe<ComponentMediaVideo>>>;
+};
+
+
+export type ComponentMediaSliderSlider_ImageArgs = {
+  filters?: InputMaybe<ComponentMediaImageFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+export type ComponentMediaSliderSlider_VideoArgs = {
+  filters?: InputMaybe<ComponentMediaVideoFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ComponentMediaVideo = {
+  __typename?: 'ComponentMediaVideo';
+  description?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+  title?: Maybe<Scalars['String']['output']>;
+  video_file: UploadFileEntityResponse;
+};
+
+export type ComponentMediaVideoFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentMediaVideoFiltersInput>>>;
+  description?: InputMaybe<StringFilterInput>;
+  not?: InputMaybe<ComponentMediaVideoFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentMediaVideoFiltersInput>>>;
+  title?: InputMaybe<StringFilterInput>;
+};
+
 export type ComponentMetaSeo = {
   __typename?: 'ComponentMetaSeo';
   id: Scalars['ID']['output'];
@@ -205,7 +265,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']['input']>;
 };
 
-export type GenericMorph = ComponentHeroHeroOption | ComponentHeroHeroOptionItem | ComponentLayoutContactForm | ComponentLayoutContainer | ComponentMetaSeo | ComponentTypographyActionLink | ComponentTypographyContent | ComponentTypographyHeading | I18NLocale | Page | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = ComponentHeroHeroOption | ComponentHeroHeroOptionItem | ComponentLayoutContactForm | ComponentLayoutContainer | ComponentMediaImage | ComponentMediaSlider | ComponentMediaVideo | ComponentMetaSeo | ComponentTypographyActionLink | ComponentTypographyContent | ComponentTypographyHeading | I18NLocale | Page | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type I18NLocale = {
   __typename?: 'I18NLocale';
@@ -538,7 +598,7 @@ export type PageInput = {
   slug?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PagePageContentDynamicZone = ComponentHeroHeroOption | ComponentLayoutContactForm | ComponentLayoutContainer | ComponentTypographyContent | ComponentTypographyHeading | Error;
+export type PagePageContentDynamicZone = ComponentHeroHeroOption | ComponentLayoutContactForm | ComponentLayoutContainer | ComponentMediaImage | ComponentMediaSlider | ComponentMediaVideo | ComponentTypographyContent | ComponentTypographyHeading | Error;
 
 export type Pagination = {
   __typename?: 'Pagination';
