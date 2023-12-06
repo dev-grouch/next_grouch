@@ -4,14 +4,41 @@ import { PageEntity } from './generated/graphql-types'
 const cacheBust = new Date().getMinutes()
 
 const client = new ApolloClient({
-  uri: `${process.env.STRAPI_GRAPHQL_ENDPOINT_LOCAL}?cacheBust=${cacheBust}`,
+  uri: `${process.env.STRAPI_GRAPHQL_ENDPOINT}?cacheBust=${cacheBust}`,
   cache: new InMemoryCache(),
 })
 
 export async function getPage(slug: string): Promise<PageEntity> {
-  console.log('cacheBust', cacheBust)
   const { data } = await client.query({
     query: gql`
+      fragment mediaAttributes on UploadFileEntityResponse {
+        data {
+          attributes {
+            url
+            width
+            height
+          }
+        }
+      }
+
+      fragment imageAttributes on ComponentMediaImage {
+        title
+        description
+        id
+        image_file {
+          ...mediaAttributes
+        }
+      }
+
+      fragment videoAttributes on ComponentMediaVideo {
+        title
+        description
+        id
+        video_file {
+          ...mediaAttributes
+        }
+      }
+
       query GetPage($slug: String!) {
         pages(filters: {slug: {eq: $slug}}) {
           data {
@@ -46,6 +73,20 @@ export async function getPage(slug: string): Promise<PageEntity> {
                   }
                   content {
                     text
+                  }
+                }
+                ... on ComponentMediaImage {
+                  ...imageAttributes
+                }
+                ... on ComponentMediaVideo {
+                  ...videoAttributes
+                }
+                ... on ComponentMediaSlider {
+                  slider_videos {
+                    ...videoAttributes
+                  }
+                  slider_images {
+                    ...imageAttributes
                   }
                 }
               }

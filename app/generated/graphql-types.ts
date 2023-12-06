@@ -95,15 +95,8 @@ export type ComponentMediaImage = {
   __typename?: 'ComponentMediaImage';
   description?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
-  image_file: UploadFileRelationResponseCollection;
+  image_file: UploadFileEntityResponse;
   title?: Maybe<Scalars['String']['output']>;
-};
-
-
-export type ComponentMediaImageImage_FileArgs = {
-  filters?: InputMaybe<UploadFileFiltersInput>;
-  pagination?: InputMaybe<PaginationArg>;
-  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type ComponentMediaImageFiltersInput = {
@@ -117,19 +110,19 @@ export type ComponentMediaImageFiltersInput = {
 export type ComponentMediaSlider = {
   __typename?: 'ComponentMediaSlider';
   id: Scalars['ID']['output'];
-  slider_image?: Maybe<Array<Maybe<ComponentMediaImage>>>;
-  slider_video?: Maybe<Array<Maybe<ComponentMediaVideo>>>;
+  slider_images?: Maybe<Array<Maybe<ComponentMediaImage>>>;
+  slider_videos?: Maybe<Array<Maybe<ComponentMediaVideo>>>;
 };
 
 
-export type ComponentMediaSliderSlider_ImageArgs = {
+export type ComponentMediaSliderSlider_ImagesArgs = {
   filters?: InputMaybe<ComponentMediaImageFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 
-export type ComponentMediaSliderSlider_VideoArgs = {
+export type ComponentMediaSliderSlider_VideosArgs = {
   filters?: InputMaybe<ComponentMediaVideoFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;

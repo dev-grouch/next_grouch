@@ -258,23 +258,19 @@ input ComponentMediaImageFiltersInput {
 
 type ComponentMediaImage {
   id: ID!
-  image_file(
-    filters: UploadFileFiltersInput
-    pagination: PaginationArg = {}
-    sort: [String] = []
-  ): UploadFileRelationResponseCollection!
+  image_file: UploadFileEntityResponse!
   title: String
   description: String
 }
 
 type ComponentMediaSlider {
   id: ID!
-  slider_video(
+  slider_videos(
     filters: ComponentMediaVideoFiltersInput
     pagination: PaginationArg = {}
     sort: [String] = []
   ): [ComponentMediaVideo]
-  slider_image(
+  slider_images(
     filters: ComponentMediaImageFiltersInput
     pagination: PaginationArg = {}
     sort: [String] = []

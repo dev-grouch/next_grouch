@@ -1,6 +1,5 @@
 import './globals.scss'
 import cx from 'classnames'
-import Script from 'next/script'
 import type { Metadata } from 'next'
 
 import Header from '@components/header/header'
