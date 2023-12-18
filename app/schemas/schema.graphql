@@ -251,6 +251,7 @@ type ComponentLayoutContainer {
 input ComponentMediaImageFiltersInput {
   title: StringFilterInput
   description: StringFilterInput
+  featured: BooleanFilterInput
   and: [ComponentMediaImageFiltersInput]
   or: [ComponentMediaImageFiltersInput]
   not: ComponentMediaImageFiltersInput
@@ -261,25 +262,33 @@ type ComponentMediaImage {
   image_file: UploadFileEntityResponse!
   title: String
   description: String
+  featured: Boolean
+}
+
+enum ENUM_COMPONENTMEDIASLIDER_TYPE {
+  grid
+  slider
 }
 
 type ComponentMediaSlider {
   id: ID!
-  slider_videos(
+  collection_video_uploads(
     filters: ComponentMediaVideoFiltersInput
     pagination: PaginationArg = {}
     sort: [String] = []
   ): [ComponentMediaVideo]
-  slider_images(
+  collection_images(
     filters: ComponentMediaImageFiltersInput
     pagination: PaginationArg = {}
     sort: [String] = []
   ): [ComponentMediaImage]
+  type: ENUM_COMPONENTMEDIASLIDER_TYPE
 }
 
 input ComponentMediaVideoFiltersInput {
   description: StringFilterInput
   title: StringFilterInput
+  featured: BooleanFilterInput
   and: [ComponentMediaVideoFiltersInput]
   or: [ComponentMediaVideoFiltersInput]
   not: ComponentMediaVideoFiltersInput
@@ -290,6 +299,7 @@ type ComponentMediaVideo {
   video_file: UploadFileEntityResponse!
   description: String
   title: String
+  featured: Boolean
 }
 
 input ComponentMetaSeoFiltersInput {

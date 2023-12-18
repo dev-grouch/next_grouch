@@ -4,7 +4,8 @@ import ComponentLayoutContainer from "@/components/strapi/ComponentLayoutContain
 import ComponentTypographyContent from "@/components/strapi/ComponentTypographyContent/ComponentTypographyContent";
 import ComponentTypographyHeading from "@/components/strapi/ComponentTypographyHeading/ComponentTypographyHeading";
 import { PagePageContentDynamicZone } from "../generated/graphql-types";
-import StrapiImage from "@/components/strapi/ComponentMediaImage/ComponentMediaImage";
+import StrapiImage from "@/components/strapi/ComponentMediaImage/StrapiImage";
+import StrapiVideo from "@/components/strapi/ComponentMediaVideo/StrapiVideo";
 
 type ComponentTypeMap = {
   [key: string]: React.ComponentType<any>
@@ -12,6 +13,7 @@ type ComponentTypeMap = {
 
 const COMPONENT_MAP: ComponentTypeMap = {
   'ComponentMediaImage': StrapiImage,
+  'ComponentMediaVideo': StrapiVideo,
   'ComponentLayoutContainer': ComponentLayoutContainer,
   'ComponentTypographyContent': ComponentTypographyContent,
   'ComponentTypographyHeading': ComponentTypographyHeading,
@@ -68,6 +70,15 @@ const renderComponent = (componentData :PagePageContentDynamicZone | null ) => {
           image_file={componentData.image_file}
         />
       );
+      case 'ComponentMediaVideo':
+        return (
+          <Component
+            key={componentData.id}
+            title={componentData.title}
+            description={componentData.description}
+            video_file={componentData.video_file}
+          />
+        );
     default:
       return <div>No Component...</div>;
   }

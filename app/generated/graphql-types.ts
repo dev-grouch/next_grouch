@@ -94,6 +94,7 @@ export type ComponentLayoutContainer = {
 export type ComponentMediaImage = {
   __typename?: 'ComponentMediaImage';
   description?: Maybe<Scalars['String']['output']>;
+  featured?: Maybe<Scalars['Boolean']['output']>;
   id: Scalars['ID']['output'];
   image_file: UploadFileEntityResponse;
   title?: Maybe<Scalars['String']['output']>;
@@ -102,6 +103,7 @@ export type ComponentMediaImage = {
 export type ComponentMediaImageFiltersInput = {
   and?: InputMaybe<Array<InputMaybe<ComponentMediaImageFiltersInput>>>;
   description?: InputMaybe<StringFilterInput>;
+  featured?: InputMaybe<BooleanFilterInput>;
   not?: InputMaybe<ComponentMediaImageFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<ComponentMediaImageFiltersInput>>>;
   title?: InputMaybe<StringFilterInput>;
@@ -109,20 +111,21 @@ export type ComponentMediaImageFiltersInput = {
 
 export type ComponentMediaSlider = {
   __typename?: 'ComponentMediaSlider';
+  collection_images?: Maybe<Array<Maybe<ComponentMediaImage>>>;
+  collection_video_uploads?: Maybe<Array<Maybe<ComponentMediaVideo>>>;
   id: Scalars['ID']['output'];
-  slider_images?: Maybe<Array<Maybe<ComponentMediaImage>>>;
-  slider_videos?: Maybe<Array<Maybe<ComponentMediaVideo>>>;
+  type?: Maybe<Enum_Componentmediaslider_Type>;
 };
 
 
-export type ComponentMediaSliderSlider_ImagesArgs = {
+export type ComponentMediaSliderCollection_ImagesArgs = {
   filters?: InputMaybe<ComponentMediaImageFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 
-export type ComponentMediaSliderSlider_VideosArgs = {
+export type ComponentMediaSliderCollection_Video_UploadsArgs = {
   filters?: InputMaybe<ComponentMediaVideoFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -131,6 +134,7 @@ export type ComponentMediaSliderSlider_VideosArgs = {
 export type ComponentMediaVideo = {
   __typename?: 'ComponentMediaVideo';
   description?: Maybe<Scalars['String']['output']>;
+  featured?: Maybe<Scalars['Boolean']['output']>;
   id: Scalars['ID']['output'];
   title?: Maybe<Scalars['String']['output']>;
   video_file: UploadFileEntityResponse;
@@ -139,6 +143,7 @@ export type ComponentMediaVideo = {
 export type ComponentMediaVideoFiltersInput = {
   and?: InputMaybe<Array<InputMaybe<ComponentMediaVideoFiltersInput>>>;
   description?: InputMaybe<StringFilterInput>;
+  featured?: InputMaybe<BooleanFilterInput>;
   not?: InputMaybe<ComponentMediaVideoFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<ComponentMediaVideoFiltersInput>>>;
   title?: InputMaybe<StringFilterInput>;
@@ -213,6 +218,11 @@ export type DateTimeFilterInput = {
 export enum Enum_Componentlayoutcontainer_Classname {
   Center = 'center',
   Full = 'full'
+}
+
+export enum Enum_Componentmediaslider_Type {
+  Grid = 'grid',
+  Slider = 'slider'
 }
 
 export enum Enum_Componenttypographyheading_Level {

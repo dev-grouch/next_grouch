@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.8.7",
+    "@cloudinary/react": "^1.11.2",
+    "@cloudinary/url-gen": "^1.14.0",
     "@hookform/resolvers": "^3.2.0",
     "@react-email/components": "^0.0.7",
     "@strapi/blocks-react-renderer": "^1.0.0-beta.0",

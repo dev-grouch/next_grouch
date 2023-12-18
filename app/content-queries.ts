@@ -17,6 +17,7 @@ export async function getPage(slug: string): Promise<PageEntity> {
             url
             width
             height
+            provider_metadata
           }
         }
       }
@@ -82,12 +83,13 @@ export async function getPage(slug: string): Promise<PageEntity> {
                   ...videoAttributes
                 }
                 ... on ComponentMediaSlider {
-                  slider_videos {
+                  collection_video_uploads {
                     ...videoAttributes
                   }
-                  slider_images {
+                  collection_images {
                     ...imageAttributes
                   }
+                  type
                 }
               }
               slug
