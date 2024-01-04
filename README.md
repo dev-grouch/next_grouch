@@ -2,7 +2,7 @@
 
 ### about
 
-This is a NextJS 14 project with TypeScript. It gets content from a headless CMS (Strapi) and renders components that correspond to the content "block" type. Currentlu deployed on Vercel.
+This is a NextJS 14 project with TypeScript. It will get content from a headless CMS (Strapi) and renders components that correspond to the content "block" type. This work is [in-progress](https://github.com/dev-grouch/next_grouch/tree/strapi-content). Currently deployed on Vercel.
 
 #### 📝 component and style structure
 
