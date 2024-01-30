@@ -18,7 +18,7 @@ export default function CustomWebsites() {
       <Container color={'semiDark'}>
         <H1>Custom Websites</H1>
         <P>
-          Does your website need a refresh, or are you starting from scratch? We
+          Does your website need a refresh? Are you starting from scratch? We
           can help you with all aspects of your online presence with a custom
           website and email support. We love to work with small businesses,
           artists, and non-profits!

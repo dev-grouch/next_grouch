@@ -21,7 +21,7 @@ export default function Home() {
         <H1>&gt; hi!</H1>
         <P>
           Welcome to grouch.dev, where we can help you with all aspects of your
-          online presence with a custom website and email support, or as
+          online presence with a custom website and email support, or as a
           programming resource for an existing project.
         </P>
 
