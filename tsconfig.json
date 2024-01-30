@@ -24,7 +24,7 @@
       "@styles/*": ["./styles/*"],
       "@media/*": ["./media/*"],
       "@icons/*": ["./components/icons/*"],
-      "@emails/*": ["./emails/*"],
+      "@emails/*": ["./emails/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
