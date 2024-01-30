@@ -40,7 +40,7 @@
   }
 }
 
-@mixin amifer-regular                        {
+@mixin amifer-regular {
   font-family: $amifer-font-family;
   font-weight: $amifer-font-weight;
   font-style: $amifer-font-style;
@@ -84,10 +84,9 @@
 
   @include small-up {
     padding: $container-padding--top--xl $container-padding--right--xl
-      $container-padding--bottom--xl $container-padding--left--xl
+      $container-padding--bottom--xl $container-padding--left--xl;
   }
 }
-
 
 @mixin inputButtonStyles {
   width: fit-content;
@@ -114,13 +113,12 @@
   }
 }
 
-
 @mixin linkButtonStyles {
-  font-size: .8em;
+  font-size: 0.8em;
   display: inline-block;
   width: fit-content;
   height: fit-content;
-  padding: 0.5em 1.1em 0.6em 1.1em;
+  padding: 0.5em 1.1em 0.5em 1.1em;
   background-color: $grouch-dark-yellow;
   color: $grouch-dirty-black;
   font-weight: 700;
