@@ -11,9 +11,6 @@ import styles from './layout.module.scss'
 import Providers from './providers'
 
 export const metadata: Metadata = {
-  title: 'Welcome to Grouch.dev — NextJS edition',
-  description:
-    'Web development and programming services. Based in the Asheville, NC area. Custom websites, small business email support, and contract programming.',
   icons: [
     {
       rel: 'icon',
@@ -34,6 +31,21 @@ export const metadata: Metadata = {
       url: '/site.webmanifest',
     },
   ],
+  openGraph: {
+    images: [
+      {
+        url: '/images/open-graph.png',
+        width: 2632,
+        height: 1648,
+        alt: 'Websites for small business, email support, and fullstack engineering | grouch.dev',
+      },
+    ],
+    url: `${process.env.NEXT_PUBLIC_ROOT_URL}/`,
+    type: 'website',
+    siteName:
+      'Websites for small business, email support, and fullstack engineering | grouch.dev',
+    locale: 'en_US',
+  },
 }
 
 export default function RootLayout({
@@ -45,28 +57,28 @@ export default function RootLayout({
     <html lang="en">
       {process.env.NODE_ENV === 'production' && (
         <>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-6BK8V3W198" />
-        <Script id="google-analytics">
-          {`
+          <Script src="https://www.googletagmanager.com/gtag/js?id=G-6BK8V3W198" />
+          <Script id="google-analytics">
+            {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'G-6BK8V3W198');
           `}
-        </Script>
+          </Script>
         </>
       )}
       <body className={cx(styles.body)}>
-          <Providers>
-            <div className="foreground">
-              <Header />
-              {children}
-              <Footer />
-            </div>
-            <Background />
-          </Providers>
-        </body>
+        <Providers>
+          <div className="foreground">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+          <Background />
+        </Providers>
+      </body>
     </html>
   )
 }

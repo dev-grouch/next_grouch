@@ -64,10 +64,10 @@ const ContactForm = () => {
       id="contact">
       <Container>
         <div className={styles.form_content_wrapper}>
-          <H2>send us a note!</H2>
+          <H2>Send us a note!</H2>
           <P>
             Ready to turn your ideas into reality? We&apos;d love to hear from
-            you! Fill out the form, and let&apos;s get started!
+            you! Fill out the form, and let&apos;s get started.
           </P>
 
           <div className={styles.form_wrapper}>

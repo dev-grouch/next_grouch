@@ -6,6 +6,10 @@
   margin: 0 auto 1em;
   @include container-padding;
 
+  footer & {
+    margin-bottom: 0;
+  }
+
   &__center {
     text-align: center;
   }
@@ -30,8 +34,11 @@
 
   &__purple {
     background: transparentize(#9b6ad3, 0.6);
-    background: linear-gradient(253deg, rgba(155,106,211,0.1) 18%, rgba(155,106,211,0.8) 100%);
-
+    background: linear-gradient(
+      253deg,
+      rgba(155, 106, 211, 0.1) 18%,
+      rgba(155, 106, 211, 0.8) 100%
+    );
   }
 
   &__blue {
@@ -44,11 +51,20 @@
 
   &__red {
     background: transparentize(#d15959, 0.6);
-    background: linear-gradient(253deg, rgba(209,89,89,0.1) 18%, rgba(209,89,89,0.8) 100%);
+    background: linear-gradient(
+      253deg,
+      rgba(209, 89, 89, 0.1) 18%,
+      rgba(209, 89, 89, 0.8) 100%
+    );
   }
 
   &__yellow {
-    background: var(--grouch-dark-yellow);
+    background: transparentize(#dbdb4f, 0.6);
+    background: linear-gradient(
+      253deg,
+      rgba(219, 219, 79, 0.1) 18%,
+      rgba(219, 219, 79, 0.8) 100%
+    );
     color: var(--grouch-dirty-black);
   }
 
@@ -59,13 +75,15 @@
 
   &__semiDark {
     background: transparentize(#191919, 0.6);
-    background: linear-gradient(253deg, rgba(25,25,25,0.1) 18%, rgba(25,25,25,0.8) 100%);
+    background: linear-gradient(
+      253deg,
+      rgba(25, 25, 25, 0.1) 18%,
+      rgba(25, 25, 25, 0.8) 100%
+    );
     color: var(--grouch-on-dark-text);
-    // backdrop-filter: blur(3px);
 
     @include small-up {
       background: transparentize(#191919, 1);
-      // backdrop-filter: blur(1px);
     }
   }
 
@@ -81,7 +99,6 @@
     }
   }
 
-
   p {
     margin: 1em 0 0;
     padding: 0;
@@ -92,7 +109,6 @@
   }
 
   @include small-up {
-
     &__full {
       padding-right: 0;
       padding-left: 0;

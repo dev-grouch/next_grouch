@@ -1,10 +1,18 @@
-import styles from './page.module.scss'
+import styles from '@styles/page.module.scss'
 import Container from '@components/container/container'
 import ContactForm from '@components/contact_form/contact_form'
 import H1 from '@/components/h1/h1'
 import H2 from '@/components/h2/h2'
 import P from '@/components/p/p'
 import LinkButton from '@/components/linkButton/linkButton'
+import { Metadata } from 'next/types'
+
+export const metadata: Metadata = {
+  title:
+    'Websites for small business, email support, and fullstack engineering | grouch.dev',
+  description:
+    'Web development and programming services. Based in the Asheville, NC area. Custom websites, small business email support, and contract programming.',
+}
 
 export default function Home() {
   return (
@@ -12,16 +20,15 @@ export default function Home() {
       <Container color={'semiDark'}>
         <H1>&gt; hi!</H1>
         <P>
-          Welcome to grouch.dev, where we&apos;re all about turning grumbles
-          into greatness. We embrace the grumpiness that can sometimes accompany
-          the ever-changing world of technology.</P>
+          Welcome to grouch.dev, where we can help you with all aspects of your
+          online presence with a custom website and email support, or as
+          programming resource for an existing project.
+        </P>
 
         <P>
-          Our name is a nod to those
-          grouchy moments we&apos;ve all experienced when faced with a new
-          challenge or change. But, you know what? A sprinkle of understanding,
-          a dash of knowledge, and a heap of empathy can turn any frown upside
-          down.
+          We&apos;re all about turning grumbles into greatness! We embrace the
+          grumpiness that can sometimes accompany the ever-changing world of
+          technology.
         </P>
 
         <P>
@@ -29,34 +36,38 @@ export default function Home() {
         </P>
       </Container>
 
-      <Container id='customWebsites' color={'purple'}>
-        <H2>custom websites</H2>
+      <Container id="customWebsites" color={'purple'}>
+        <H2>Custom Websites</H2>
 
         <P>
-          In addition to our programming and support services, we also create
-          small custom websites tailored to your specific requirements. Whether
-          you need a professional online portfolio, a sleek landing page, or an
+          We create custom websites tailored to your specific needs. Whether you
+          need a professional online portfolio, a sleek landing page, or an
           easy-to-navigate blog, we&apos;ve got you covered.
         </P>
 
         <P>
-          <a href="#learnMore" className='coming-soon' title="coming soon">learn more</a>
+          <LinkButton href="/custom-websites" text="learn more" />
         </P>
       </Container>
 
       <ContactForm />
 
       <Container color={'red'}>
-        <H2>Small Business Email <br />& Website Support</H2>
+        <H2>
+          Small Business Email <br />& Website Support
+        </H2>
 
         <P>
           Navigating the digital world can be tricky, but we&apos;re here to
-          help! We provide small business email support and website assistance
-          to ensure your communication tools and online presence are top-notch.
+          help! We provide small business email support to ensure your
+          communication tools and online presence are seamless and top-tier.
         </P>
 
         <P>
-          <a href="#learnMore" className='coming-soon' title="coming soon">learn more</a>
+          <LinkButton
+            href="/small-business-email-support-and-website-maintenance"
+            text="learn more"
+          />
         </P>
       </Container>
 
@@ -64,14 +75,14 @@ export default function Home() {
         <H2>Contract Programming</H2>
 
         <P>
-          Need an experienced programmer to bring your project to life? Look no
-          further! With expertise in Ruby on Rails and React, we offer contract
-          programming services to meet your unique needs and help you achieve
-          your business goals.
+          Need an experienced programmer to help bring your project to life?
+          Look no further! With experience in React, Typescript, and Ruby on
+          Rails, we offer contract programming services to meet your unique
+          needs and help you achieve your business goals.
         </P>
 
         <P>
-          <a href="#learnMore" className='coming-soon' title="coming soon">learn more</a>
+          <LinkButton href="#contact" text="get in touch" />
         </P>
       </Container>
     </main>
