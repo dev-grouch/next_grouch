@@ -38,7 +38,7 @@
   }
 }
 
-@mixin  amifer-regular                        {
+@mixin amifer-regular                        {
   font-family: $amifer-font-family;
   font-weight: $amifer-font-weight;
   font-style: $amifer-font-style;
@@ -74,4 +74,14 @@
   font-family: $nexus-font-family;
   font-weight: $nexus-font-weight;
   font-style: italic;
+}
+
+@mixin container-padding {
+  padding: $container-padding--top $container-padding--right
+    $container-padding--bottom $container-padding--left;
+
+  @include small-up {
+    padding: $container-padding--top--xl $container-padding--right--xl
+      $container-padding--bottom--xl $container-padding--left--xl
+  }
 }

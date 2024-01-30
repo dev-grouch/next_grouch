@@ -3,8 +3,7 @@
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: $container-padding--top $container-padding--right
-    $container-padding--bottom $container-padding--left;
+  @include container-padding;
 
   &__center {
     text-align: center;
@@ -47,7 +46,7 @@
 
   &__dark {
     background: var(--grouch-dark-background);
-    color: var(--grouch-dark-text);
+    color: var(--grouch-on-dark-text);
   }
 
   &__white {
@@ -78,8 +77,6 @@
   }
 
   @include small-up {
-    padding: $container-padding--top--xl $container-padding--right--xl
-      $container-padding--bottom--xl $container-padding--left--xl;
 
     &__full {
       padding-right: 0;
