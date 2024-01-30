@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: '/images/open-graph.png',
+        url: `${process.env.NEXT_PUBLIC_ROOT_URL}/images/open-graph.png`,
         width: 2632,
         height: 1648,
         alt: 'Websites for small business, email support, and fullstack engineering | grouch.dev',
