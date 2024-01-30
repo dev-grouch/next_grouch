@@ -14,10 +14,24 @@
     a {
       display: block;
       padding: 2em $container-padding--right 1.7em $container-padding--left;
+      padding: 1.2em 0em 0.8em $container-padding--left;
       background: color.adjust($color: #191919, $alpha: -0.5);
 
       @media (min-width: 768px) {
-        padding-left: $container-padding--left--xl;
+        padding: 2em $container-padding--right 1.7em $container-padding--left--xl;
+      }
+    }
+
+    svg {
+      width: 100%;
+      max-width: 117.6px;
+      height: 100%;
+      max-height: 33.3px;
+      transform: scale(.7);
+      transform-origin: left center;
+
+      @media (min-width: 768px) {
+        transform: scale(1);
       }
     }
   }
