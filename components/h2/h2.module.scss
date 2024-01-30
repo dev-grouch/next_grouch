@@ -1,8 +1,9 @@
 @import '@styles/variables';
+@import '@styles/mixins';
 
 .h2 {
   @include amifer-bold;
-  color: white;
+  color: inherit;
   margin: 0;
   font-weight: 600;
   font-size: 2.4rem;

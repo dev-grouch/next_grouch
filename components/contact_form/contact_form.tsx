@@ -77,7 +77,7 @@ const ContactForm = () => {
             >
               <label htmlFor="name" className={cx([styles.name, styles.label])}>
                 <span className={styles.labelText}>Name</span>
-                <input type="text" {...register('name', { required: true })} />
+                <input type="text" {...register('name', { required: true })} autoComplete="true" />
 
                 {errors.name?.message && (
                 <P className={styles.errorMsg}>{errors.name.message}</P>
@@ -86,7 +86,7 @@ const ContactForm = () => {
 
               <label htmlFor="email" className={cx([styles.email, styles.label])}>
                 <span className={styles.labelText}>Email</span>
-                <input type="email" {...register('email', { required: true })} />
+                <input type="email" {...register('email', { required: true })} autoComplete="true" />
 
                 {errors.email?.message && (
                   <P className={styles.errorMsg}>{errors.email.message}</P>

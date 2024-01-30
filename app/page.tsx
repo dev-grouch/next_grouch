@@ -4,24 +4,32 @@ import ContactForm from '@components/contact_form/contact_form'
 import H1 from '@/components/h1/h1'
 import H2 from '@/components/h2/h2'
 import P from '@/components/p/p'
+import LinkButton from '@/components/linkButton/linkButton'
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Container>
+      <Container color={'semiDark'}>
         <H1>&gt; hi!</H1>
         <P>
           Welcome to grouch.dev, where we&apos;re all about turning grumbles
           into greatness. We embrace the grumpiness that can sometimes accompany
-          the ever-changing world of technology. Our name is a nod to those
+          the ever-changing world of technology.</P>
+
+        <P>
+          Our name is a nod to those
           grouchy moments we&apos;ve all experienced when faced with a new
           challenge or change. But, you know what? A sprinkle of understanding,
           a dash of knowledge, and a heap of empathy can turn any frown upside
           down.
         </P>
+
+        <P>
+          <LinkButton href="#customWebsites" text="learn more" />
+        </P>
       </Container>
 
-      <Container>
+      <Container id='customWebsites' color={'purple'}>
         <H2>custom websites</H2>
 
         <P>
@@ -38,7 +46,7 @@ export default function Home() {
 
       <ContactForm />
 
-      <Container>
+      <Container color={'red'}>
         <H2>Small Business Email <br />& Website Support</H2>
 
         <P>
@@ -52,7 +60,7 @@ export default function Home() {
         </P>
       </Container>
 
-      <Container>
+      <Container color={'semiDark'}>
         <H2>Contract Programming</H2>
 
         <P>

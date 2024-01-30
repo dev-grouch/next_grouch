@@ -1,12 +1,12 @@
-$container-padding--top: 30px;
-$container-padding--right: 40px;
-$container-padding--bottom: 30px;
-$container-padding--left: 40px;
+$container-padding--top: 2rem;
+$container-padding--right: 3rem;
+$container-padding--bottom: 3.2rem;
+$container-padding--left: 3rem;
 
-$container-padding--top--xl: 50px;
-$container-padding--right--xl: 80px;
-$container-padding--bottom--xl: 50px;
-$container-padding--left--xl: 80px;
+$container-padding--top--xl: 3.5rem;
+$container-padding--right--xl: 5rem;
+$container-padding--bottom--xl: 4rem;
+$container-padding--left--xl: 5rem;
 
 $grouch-dark-blue: #346499;
 $grouch-light-blue: #71b0ea;
@@ -31,4 +31,6 @@ $nexus-font-family: "ff-nexus-typewriter", sans-serif;
 $nexus-font-weight: 400;
 $nexus-font-style: normal;
 
-@import './mixins';
+$input-border-width: 4px;
+$form-gap-x: 1em;
+$form-gap-y: 2.6em;

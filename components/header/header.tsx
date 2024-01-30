@@ -1,5 +1,3 @@
-import cx from 'classnames'
-
 import GrouchLogoText from '../icons/grouch'
 import styles from './header.module.scss'
 import Container from '@components/container/container'

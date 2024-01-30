@@ -1,8 +1,5 @@
 @import '@styles/variables';
-
-$input-border-width: 4px;
-$form-gap-x: 1em;
-$form-gap-y: 2.6em;
+@import '@styles/mixins';
 
 @mixin inputStyles {
   @include nexus-regular;
@@ -141,28 +138,7 @@ $form-gap-y: 2.6em;
       @include nexus-bold;
       grid-area: submit;
       justify-self: end;
-      width: fit-content;
-      height: fit-content;
-      padding: 0.8em 3em;
-      background-color: $grouch-dark-yellow;
-      color: $grouch-dirty-black;
-      font-weight: 700;
-      border: $input-border-width solid $grouch-dirty-black;
-      border-bottom: $input-border-width solid $grouch-dark-yellow;
-      border-right: $input-border-width solid $grouch-dark-yellow;
-      border-top-color: $grouch-light-yellow;
-      border-left-color: $grouch-light-yellow;
-      text-transform: uppercase;
-
-      &:hover {
-        background-color: $grouch-light-yellow;
-        color: $grouch-dirty-black;
-        cursor: pointer;
-        border-top-color: $grouch-light-yellow;
-        border-left-color: $grouch-light-yellow;
-        border-bottom-color: $grouch-dark-yellow;
-        border-right-color: $grouch-dark-yellow;
-      }
+      @include inputButtonStyles;
     }
 
     input[type='text'],

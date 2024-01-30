@@ -2,7 +2,16 @@ import React, { useMemo } from 'react'
 import cx from 'classnames'
 import styles from './container.module.scss'
 
-type Colors = 'white' | 'black' | 'blue' | 'green' | 'red' | 'yellow' | 'purple'
+type Colors =
+  'white' |
+  'black' |
+  'blue' |
+  'green' |
+  'red' |
+  'yellow' |
+  'purple' |
+  'dark' |
+  'semiDark'
 
 interface ContainerProps {
   color?: Colors

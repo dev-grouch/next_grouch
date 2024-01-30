@@ -1,3 +1,5 @@
+@import '@styles/variables';
+
 @mixin gradient-1 {
   background: rgb(17, 17, 17);
   background: linear-gradient(
@@ -83,5 +85,59 @@
   @include small-up {
     padding: $container-padding--top--xl $container-padding--right--xl
       $container-padding--bottom--xl $container-padding--left--xl
+  }
+}
+
+
+@mixin inputButtonStyles {
+  width: fit-content;
+  height: fit-content;
+  padding: 0.8em 3em;
+  background-color: $grouch-dark-yellow;
+  color: $grouch-dirty-black;
+  font-weight: 700;
+  border: $input-border-width solid $grouch-dirty-black;
+  border-bottom: $input-border-width solid $grouch-dark-yellow;
+  border-right: $input-border-width solid $grouch-dark-yellow;
+  border-top-color: $grouch-light-yellow;
+  border-left-color: $grouch-light-yellow;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $grouch-light-yellow;
+    color: $grouch-dirty-black;
+    cursor: pointer;
+    border-top-color: $grouch-light-yellow;
+    border-left-color: $grouch-light-yellow;
+    border-bottom-color: $grouch-dark-yellow;
+    border-right-color: $grouch-dark-yellow;
+  }
+}
+
+
+@mixin linkButtonStyles {
+  font-size: .8em;
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5em 1.1em 0.6em 1.1em;
+  background-color: $grouch-dark-yellow;
+  color: $grouch-dirty-black;
+  font-weight: 700;
+  border: $input-border-width solid $grouch-dirty-black;
+  border-bottom: $input-border-width solid $grouch-dark-yellow;
+  border-right: $input-border-width solid $grouch-dark-yellow;
+  border-top-color: $grouch-light-yellow;
+  border-left-color: $grouch-light-yellow;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $grouch-light-yellow;
+    color: $grouch-dirty-black;
+    cursor: pointer;
+    border-top-color: $grouch-light-yellow;
+    border-left-color: $grouch-light-yellow;
+    border-bottom-color: $grouch-dark-yellow;
+    border-right-color: $grouch-dark-yellow;
   }
 }

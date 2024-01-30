@@ -13,7 +13,7 @@
 
     a {
       display: block;
-      padding: 2em $container-padding--right 1.8em $container-padding--left;
+      padding: 2em $container-padding--right 1.7em $container-padding--left;
       background: color.adjust($color: #191919, $alpha: -0.5);
 
       @media (min-width: 768px) {

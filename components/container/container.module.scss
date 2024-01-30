@@ -1,8 +1,9 @@
 @import '@styles/variables.scss';
+@import '@styles/mixins';
 
 .container {
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 1em;
   @include container-padding;
 
   &__center {
@@ -16,7 +17,6 @@
   &__full {
     padding-right: 0;
     padding-left: 0;
-    margin-bottom: $container-padding--bottom;
 
     .container {
       padding-top: 0;
@@ -29,7 +29,9 @@
   }
 
   &__purple {
-    background: var(--grouch-light-purple);
+    background: transparentize(#9b6ad3, 0.6);
+    background: linear-gradient(253deg, rgba(155,106,211,0.1) 18%, rgba(155,106,211,0.8) 100%);
+
   }
 
   &__blue {
@@ -41,12 +43,30 @@
   }
 
   &__red {
-    background: var(--grouch-light-red);
+    background: transparentize(#d15959, 0.6);
+    background: linear-gradient(253deg, rgba(209,89,89,0.1) 18%, rgba(209,89,89,0.8) 100%);
+  }
+
+  &__yellow {
+    background: var(--grouch-dark-yellow);
+    color: var(--grouch-dirty-black);
   }
 
   &__dark {
     background: var(--grouch-dark-background);
     color: var(--grouch-on-dark-text);
+  }
+
+  &__semiDark {
+    background: transparentize(#191919, 0.6);
+    background: linear-gradient(253deg, rgba(25,25,25,0.1) 18%, rgba(25,25,25,0.8) 100%);
+    color: var(--grouch-on-dark-text);
+    // backdrop-filter: blur(3px);
+
+    @include small-up {
+      background: transparentize(#191919, 1);
+      // backdrop-filter: blur(1px);
+    }
   }
 
   &__white {
@@ -81,7 +101,6 @@
     &__full {
       padding-right: 0;
       padding-left: 0;
-      margin-bottom: $container-padding--bottom--xl;
     }
 
     &__flex {
