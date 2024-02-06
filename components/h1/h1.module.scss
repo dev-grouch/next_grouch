@@ -2,17 +2,23 @@
 @import '@styles/mixins';
 
 .h1 {
+  position: relative;
   @include amifer-bold;
   color: white;
   margin: 0;
   font-size: 3.2rem;
-  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-size: clamp(1.9rem, 6vw, 3.6rem);
+
+  // &::before {
+  //   content: '>';
+  //   position: absolute;
+  //   font-size: 0.9em;
+  //   left: -0.8em;
+  //   top: 0.1em;
+  //   color: var(--grouch-light-green);
+  // }
 
   .highlight {
     color: var(--grouch-light-green);
-  }
-
-  @include small-up {
-    font-size: 5rem;
   }
 }

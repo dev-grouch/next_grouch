@@ -18,7 +18,9 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Container color={'semiDark'}>
-        <H1>&gt; hi!</H1>
+        <H1>
+          Custom Websites &<br /> Small Business Email
+        </H1>
         <P>
           Welcome to grouch.dev, where we can help you with all aspects of your
           online presence with a custom website and email support, or as a

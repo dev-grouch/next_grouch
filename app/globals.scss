@@ -1,4 +1,4 @@
-@import url("https://use.typekit.net/gvf4wof.css");
+@import url('https://use.typekit.net/gvf4wof.css');
 @import '@styles/variables';
 @import '@styles/type';
 
@@ -106,12 +106,13 @@ body {
     )
     rgb(var(--background-start-rgb));
 
-    @include amifer-regular;
+  @include amifer-regular;
+  text-shadow: -1px 1px 0px rgba(0, 0, 0, 0.1);
 }
 
 a {
-  color: var(--grouch-light-blue);
-  text-decoration: none;
+  color: var(--grouch-dark-yellow);
+  text-shadow: -1px 1px 0px rgba(0, 0, 0, 0.4);
 
   &:hover {
     color: var(--grouch-light-blue);
